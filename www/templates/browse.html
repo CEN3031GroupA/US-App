@@ -1,5 +1,9 @@
 <ion-view view-title="Browse">
   <ion-content>
-    <h1>Browse</h1>
+    <ion-list>
+      <ion-item ng-repeat="song in songs" href="#/app/browse/{{song.id}}">
+        {{song.title}}
+      </ion-item>
+    </ion-list>
   </ion-content>
 </ion-view>

@@ -1,4 +1,16 @@
-#header {
-  background-color: #509E2F;
+.header-bar {
+  background-color: #509e2f;
+}
+
+.menu-bar {
+  background-color: #509e2f;
+}
+
+#navicon {
   color: white;
+}
+
+.homelogo {
+  margin-top: 8px;
+  height: 27px;
 }
