@@ -1,4 +1,4 @@
-angular.module('projects.controllers', [])
+angular.module('starter.projects', ['ionic'])
 
 .controller('PlaylistsCtrl', function($scope) {
   $scope.songs = [
