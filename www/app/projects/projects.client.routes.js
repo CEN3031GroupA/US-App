@@ -1,15 +1,12 @@
-angular.module('starter.projects', ['ui.router'])
+(function() {
+	'use strict';
+
+angular.module('starter.projects', ['ionic'])
 
 .config(function($stateProvider) {
   $stateProvider
-    .state('projects', {
+    .state('app.projects', {
       url: '/projects',
-      abstract: true,
-      templateUrl: '<ui-view/>'
-    })
-
-    .state('projects.list', {
-      url: '',
       views: {
         'menuContent': {
           templateUrl: 'app/projects/projects.html',
@@ -17,4 +14,5 @@ angular.module('starter.projects', ['ui.router'])
         }
       }
     })
+  });
 });
