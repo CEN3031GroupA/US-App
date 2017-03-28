@@ -6,11 +6,36 @@
   background-color: #509e2f;
 }
 
+.bar-subheader {
+  background-color: gray;
+}
+
 #navicon {
   color: white;
 }
 
+.title {
+  color: white;
+}
+
+/* Home */
 .homelogo {
-  margin-top: 8px;
-  height: 27px;
+  margin-top: 7px;
+  height: 30px;
+}
+
+.subheader-bar {
+  background-color: #63666a;
+}
+
+.home-card {
+  background-color: #509e2f;
+}
+
+.home-card h2 {
+  color: white;
+}
+
+.home-card p {
+  color: white;
 }
