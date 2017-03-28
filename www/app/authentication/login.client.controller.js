@@ -1,4 +1,4 @@
-angular.module('starter.controllers', [])
+angular.module('login.controllers', [])
 
 .controller('LoginCtrl', function($scope, $ionicModal, $timeout) {
 
@@ -13,7 +13,7 @@ angular.module('starter.controllers', [])
   $scope.loginData = {};
 
   // Create the login modal that we will use later
-  $ionicModal.fromTemplateUrl('app/login.html', {
+  $ionicModal.fromTemplateUrl('app/authentication/login.html', {
     scope: $scope
   }).then(function(modal) {
     $scope.modal = modal;
@@ -39,15 +39,4 @@ angular.module('starter.controllers', [])
       $scope.closeLogin();
     }, 1000);
   };
-})
-
-.controller('PlaylistsCtrl', function($scope) {
-  $scope.songs = [
-    { title: 'Reggae', id: 1 },
-    { title: 'Chill', id: 2 },
-    { title: 'Dubstep', id: 3 },
-    { title: 'Indie', id: 4 },
-    { title: 'Rap', id: 5 },
-    { title: 'Cowbell', id: 6 }
-  ];
 })

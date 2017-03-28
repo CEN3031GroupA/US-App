@@ -1,4 +1,4 @@
-angular.module('starter.core', ['ionic', 'starter.controllers'])
+angular.module('starter.core', ['ionic', 'login.controllers', 'projects.controllers'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -38,7 +38,7 @@ angular.module('starter.core', ['ionic', 'starter.controllers'])
     url: '/browse',
     views: {
       'menuContent': {
-        templateUrl: 'app/browse.html',
+        templateUrl: 'app/projects/browse.html',
         controller: 'PlaylistsCtrl'
       }
     }
