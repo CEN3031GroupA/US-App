@@ -1,4 +1,4 @@
-angular.module('starter.core', ['ionic'])
+angular.module('starter.core', ['ionic', 'starter.controllers'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -22,7 +22,7 @@ angular.module('starter.core', ['ionic'])
     .state('app', {
     url: '/app',
     abstract: true,
-    templateUrl: 'templates/menu.html',
+    templateUrl: 'app/core/menu.html',
     controller: 'LoginCtrl'
   })
 
@@ -30,7 +30,16 @@ angular.module('starter.core', ['ionic'])
     url: '/search',
     views: {
       'menuContent': {
-        templateUrl: 'templates/search.html'
+        templateUrl: 'app/search.html'
+      }
+    }
+  })
+  .state('app.browse', {
+    url: '/browse',
+    views: {
+      'menuContent': {
+        templateUrl: 'app/browse.html',
+        controller: 'PlaylistsCtrl'
       }
     }
   })
@@ -38,7 +47,7 @@ angular.module('starter.core', ['ionic'])
     url: '/home',
     views: {
       'menuContent': {
-        templateUrl: 'templates/home.html'
+        templateUrl: 'app/core/home.html'
       }
     }
   })
