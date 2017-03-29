@@ -1,14 +1,42 @@
 angular.module('starter.core', ['ionic', 'login.controllers'])
 
 .config(function($stateProvider, $urlRouterProvider) {
+  $urlRouterProvider.otherwise(function ($injector, $location) {
+    $injector.get('$state').transitionTo('app.not-found', null, {
+      location: false
+    });
+  });
+
   $stateProvider
     .state('app', {
-    url: '/app',
-    abstract: true,
-    templateUrl: 'app/core/menu.html',
-    controller: 'LoginCtrl'
+      url: '/app',
+      abstract: true,
+      templateUrl: 'app/core/menu.html',
+      controller: 'LoginCtrl'
     })
-
+    .state('app.not-found', {
+      url: '/not-found',
+      templateUrl: 'app/core/404.view.html',
+      data: {
+        ignoreState: true
+      }
+    })
+    .state('app.bad-request', {
+      url: '/bad-request',
+      templateUrl: 'app/core/400.view.html',
+      data: {
+        ignoreState: true
+      }
+    })
+    .state('app.projects', {
+      url: '/projects',
+      views: {
+        'menuContent': {
+          templateUrl: 'app/projects/projects.html',
+          controller: 'PlaylistsCtrl'
+        }
+      }
+    })
     .state('app.search', {
       url: '/search',
       views: {
