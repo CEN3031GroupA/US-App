@@ -1,12 +1,6 @@
 angular.module('starter.core', ['ionic', 'login.controllers'])
 
 .config(function($stateProvider, $urlRouterProvider) {
-  $urlRouterProvider.otherwise(function ($injector, $location) {
-    $injector.get('$state').transitionTo('app.not-found', null, {
-      location: false
-    });
-  });
-
   $stateProvider
     .state('app', {
       url: '/app',
@@ -14,26 +8,11 @@ angular.module('starter.core', ['ionic', 'login.controllers'])
       templateUrl: 'app/core/menu.html',
       controller: 'LoginCtrl'
     })
-    .state('app.not-found', {
-      url: '/not-found',
-      templateUrl: 'app/core/404.view.html',
-      data: {
-        ignoreState: true
-      }
-    })
-    .state('app.bad-request', {
-      url: '/bad-request',
-      templateUrl: 'app/core/400.view.html',
-      data: {
-        ignoreState: true
-      }
-    })
-    .state('app.projects', {
-      url: '/projects',
+    .state('app.home', {
+      url: '/home',
       views: {
         'menuContent': {
-          templateUrl: 'app/projects/projects.html',
-          controller: 'PlaylistsCtrl'
+          templateUrl: 'app/core/home.html'
         }
       }
     })
@@ -45,14 +24,24 @@ angular.module('starter.core', ['ionic', 'login.controllers'])
         }
       }
     })
-    .state('app.home', {
-      url: '/home',
+    .state('app.projects', {
+      url: '/projects',
       views: {
         'menuContent': {
-          templateUrl: 'app/core/home.html'
+          templateUrl: 'app/projects/projects.html',
+          controller: 'ProjectsCtrl'
         }
       }
     })
+    .state('app.single', {
+      url: '/projects/:projectId',
+      views: {
+        'menuContent': {
+          templateUrl: 'app/projects/view-project.html',
+          controller: 'ProjectsCtrl'
+        }
+      }
+    });
     // if none of the above states are matched, use this as the fallback
-    //$urlRouterProvider.otherwise('/app/home');
+    $urlRouterProvider.otherwise('/app/home');
 });
