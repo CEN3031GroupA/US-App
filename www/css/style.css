@@ -39,3 +39,8 @@
 .home-card p {
   color: white;
 }
+
+/* View Single Project */
+#voteButton {
+  background-color: #509e2f;
+}

@@ -27,20 +27,6 @@ mongoose.connect(conf.MONGO_DB, {
 		}
 });
 
-app.use(function (req, res, next) {
-	res.header('Access-Control-Allow-Credentials', true);
-	res.header('Access-Control-Allow-Origin', req.headers.origin);
-	res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
-	res.header('Access-Control-Allow-Headers', 'X-Requested-With, X-HTTP-Method-Override, Content-Type, Accept');
-
-	if ('OPTIONS' === req.method) {
-		res.status(200).end();
-	} else {
-		next();
-	}
-});
-
-
 // ROUTES FOR OUR API
 // =============================================================================
 var router = express.Router();              // get an instance of the express Router

@@ -1,7 +1,14 @@
-<ion-view view-title="Projects">
-  <ion-content>
+<ion-view view-title="Projects" ng-init="find();">
+  <div class="bar bar-subheader
+    item-input-inset bar-light">
+    <label class="item-input-wrapper">
+      <i class="icon ion-search placeholder-icon"></i>
+      <input type="search" ng-model="query" placeholder="Search">
+    </label>
+  </div>
+  <ion-content class="has-subheader">
     <ion-list>
-      <ion-item ng-repeat="project in projects" href="#/app/projects/{{project.id}}">
+      <ion-item ng-repeat="project in projects | filter: query" href="#/app/projects/{{project._id}}">
         {{project.title}}
       </ion-item>
     </ion-list>
