@@ -1,4 +1,10 @@
 {
   "name": "Ultimate",
-  "app_id": ""
+  "app_id": "",
+  "proxies": [
+    {
+      "path": "/api",
+      "proxyUrl": "https://still-eyrie-27550.herokuapp.com/api"
+    }
+  ]
 }

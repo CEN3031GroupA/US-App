@@ -1,12 +1,14 @@
 angular.module('starter.projects', ['ionic'])
 
-.controller('ProjectsCtrl', function($scope) {
-  $scope.projects = [
-    { title: 'Reggae', id: 1 },
-    { title: 'Chill', id: 2 },
-    { title: 'Dubstep', id: 3 },
-    { title: 'Indie', id: 4 },
-    { title: 'Rap', id: 5 },
-    { title: 'Cowbell', id: 6 }
-  ];
+.controller('ProjectsController', function($scope, $http) {
+  $scope.projects = "";
+  $http.get('https://still-eyrie-27550.herokuapp.com/api/projects')
+  .success(function(data) {
+    console.log('data success');
+    console.log(data); // for browser console
+    $scope.projects = data; // for UI
+  })
+  .error(function(){
+    console.log('data error');
+  })
 });

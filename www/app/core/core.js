@@ -29,7 +29,7 @@ angular.module('starter.core', ['ionic', 'login.controllers'])
       views: {
         'menuContent': {
           templateUrl: 'app/projects/projects.html',
-          controller: 'ProjectsCtrl'
+          controller: 'ProjectsController'
         }
       }
     })
@@ -38,7 +38,7 @@ angular.module('starter.core', ['ionic', 'login.controllers'])
       views: {
         'menuContent': {
           templateUrl: 'app/projects/view-project.html',
-          controller: 'ProjectsCtrl'
+          controller: 'ProjectsController'
         }
       }
     });
