@@ -24,21 +24,48 @@ angular.module('starter.core', ['ionic', 'login.controllers'])
         }
       }
     })
-    .state('app.projects', {
+    .state('app.list-projects', {
       url: '/projects',
       views: {
         'menuContent': {
-          templateUrl: 'app/projects/projects.html',
+          templateUrl: 'app/projects/client/views/list-projects.html',
           controller: 'ProjectsController'
         }
       }
     })
-    .state('app.single', {
+    .state('app.view-project', {
       url: '/projects/:projectId',
       views: {
         'menuContent': {
-          templateUrl: 'app/projects/view-project.html',
+          templateUrl: 'app/projects/client/views/view-project.html',
           controller: 'ProjectsController'
+        }
+      }
+    })
+    .state('app.create-project', {
+      url: '/create-project',
+      views: {
+        'menuContent': {
+          templateUrl: 'app/projects/client/views/create-project.html',
+          controller: ''
+        }
+      }
+    })
+    .state('app.create-project-category', {
+      url: '/project-category',
+      views: {
+        'menuContent': {
+          templateUrl: 'app/projects/client/views/create-project-category.html',
+          controller: ''
+        }
+      }
+    })
+    .state('app.create-project-team', {
+      url: '/project-team',
+      views: {
+        'menuContent': {
+          templateUrl: 'app/projects/client/views/create-project-team.html',
+          controller: ''
         }
       }
     });
