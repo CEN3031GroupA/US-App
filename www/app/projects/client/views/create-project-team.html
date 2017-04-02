@@ -1,0 +1,30 @@
+<ion-view ng-controller="ProjectsController">
+  <ion-content class="padding">
+    <div>
+      <span>Step 3/3</span>
+      <progress value="3" max="3"></progress>
+    </div>
+    <h2>Add Team Members</h2>
+    <div class="row">
+      <ul class="team-list">
+        <li><i class="icon ion-person"></i><i class="icon ion-plus"></i></li>
+      </ul>
+    </div>
+    <div class="bar item-input-inset bar-light">
+      <label class="item-input-wrapper">
+        <i class="icon ion-search placeholder-icon"></i>
+        <input type="search" ng-model="query" placeholder="Search">
+      </label>
+    </div>
+
+    <div>
+      <ion-list>
+        <ion-item class="team-list item-icon-left item-icon-right" ng-repeat="teamuser in teamusers | filter: query">
+          <i class="icon ion-person"></i><h2>{{teamuser.name}}</h2><i class="icon ion-plus"></i>
+        </ion-item>
+      </ion-list>
+    </div>
+    <button ng-click="create()">Add Project</button>
+  </ion-content>
+</ion-view>
+

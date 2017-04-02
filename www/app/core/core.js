@@ -1,6 +1,8 @@
 angular.module('starter.core', ['ionic', 'login.controllers'])
 
 .config(function($stateProvider, $urlRouterProvider) {
+  // if none of the above states are matched, use this as the fallback
+  $urlRouterProvider.otherwise('/app/home');
   $stateProvider
     .state('app', {
       url: '/app',
@@ -43,7 +45,7 @@ angular.module('starter.core', ['ionic', 'login.controllers'])
       }
     })
     .state('app.create-project', {
-      url: '/create-project',
+      url: '/create',
       views: {
         'menuContent': {
           templateUrl: 'app/projects/client/views/create-project.html',
@@ -52,7 +54,7 @@ angular.module('starter.core', ['ionic', 'login.controllers'])
       }
     })
     .state('app.create-project-category', {
-      url: '/project-category',
+      url: '/category',
       views: {
         'menuContent': {
           templateUrl: 'app/projects/client/views/create-project-category.html',
@@ -61,7 +63,7 @@ angular.module('starter.core', ['ionic', 'login.controllers'])
       }
     })
     .state('app.create-project-team', {
-      url: '/project-team',
+      url: '/team',
       views: {
         'menuContent': {
           templateUrl: 'app/projects/client/views/create-project-team.html',
@@ -69,6 +71,4 @@ angular.module('starter.core', ['ionic', 'login.controllers'])
         }
       }
     });
-    // if none of the above states are matched, use this as the fallback
-    $urlRouterProvider.otherwise('/app/home');
 });
