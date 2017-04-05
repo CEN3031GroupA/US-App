@@ -30,7 +30,7 @@ angular.module('starter.core', ['ionic', 'login.controllers'])
       url: '/projects',
       views: {
         'menuContent': {
-          templateUrl: 'app/projects/client/views/list-projects.html',
+          templateUrl: 'app/projects/views/list-projects.html',
           controller: 'ProjectsController'
         }
       }
@@ -39,7 +39,7 @@ angular.module('starter.core', ['ionic', 'login.controllers'])
       url: '/projects/:projectId',
       views: {
         'menuContent': {
-          templateUrl: 'app/projects/client/views/view-project.html',
+          templateUrl: 'app/projects/views/view-project.html',
           controller: 'ProjectsController'
         }
       }
@@ -48,7 +48,7 @@ angular.module('starter.core', ['ionic', 'login.controllers'])
       url: '/create',
       views: {
         'menuContent': {
-          templateUrl: 'app/projects/client/views/create-project.html',
+          templateUrl: 'app/projects/views/create-project.html',
           controller: ''
         }
       }
@@ -57,7 +57,7 @@ angular.module('starter.core', ['ionic', 'login.controllers'])
       url: '/category',
       views: {
         'menuContent': {
-          templateUrl: 'app/projects/client/views/create-project-category.html',
+          templateUrl: 'app/projects/views/create-project-category.html',
           controller: ''
         }
       }
@@ -66,7 +66,7 @@ angular.module('starter.core', ['ionic', 'login.controllers'])
       url: '/team',
       views: {
         'menuContent': {
-          templateUrl: 'app/projects/client/views/create-project-team.html',
+          templateUrl: 'app/projects/views/create-project-team.html',
           controller: ''
         }
       }

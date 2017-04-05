@@ -13,7 +13,7 @@ angular.module('login.controllers', [])
   $scope.loginData = {};
 
   // Create the login modal that we will use later
-  $ionicModal.fromTemplateUrl('app/authentication/login.html', {
+  $ionicModal.fromTemplateUrl('app/users/views/login.html', {
     scope: $scope
   }).then(function(modal) {
     $scope.modal = modal;
@@ -39,4 +39,4 @@ angular.module('login.controllers', [])
       $scope.closeLogin();
     }, 1000);
   };
-})
+});

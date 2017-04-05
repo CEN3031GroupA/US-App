@@ -1,4 +1,4 @@
-angular.module('starter.projects', ['ionic'])
+angular.module('starter.projects', ['ionic', 'starter.config'])
 
 .controller('ProjectsController', function($scope, $http, $stateParams, $location, $rootScope) {
 
@@ -52,7 +52,7 @@ angular.module('starter.projects', ['ionic'])
   $scope.create = function () {
     var project = $rootScope.activeProject;
 
-    $http.post('https://still-eyrie-27550.herokuapp.com/api/projects', project)
+    $http.post(config.api + '/projects', project)
       .success(function(data) {
         $location.path('app/projects/' + data._id);
         $rootScope.activeProject = null;
@@ -64,7 +64,7 @@ angular.module('starter.projects', ['ionic'])
 
   // Remove existing Project
   $scope.remove = function (project) {
-    $http.delete('https://still-eyrie-27550.herokuapp.com/api/projects/' + project._id)
+    $http.delete(config.api + '/projects/' + project._id)
       .success(function() {
         $location.path('app/projects/');
         alert('project deleted!');
@@ -76,7 +76,7 @@ angular.module('starter.projects', ['ionic'])
 
   // FIXME Update existing Project
   $scope.update = function (project) {
-    $http.put('https://still-eyrie-27550.herokuapp.com/api/projects' + project._id)
+    $http.put(config.api + '/projects' + project._id)
       .success(function() {
         $location.path('app/projects/' + project._id);
       })
@@ -87,7 +87,7 @@ angular.module('starter.projects', ['ionic'])
 
   // Find a list of Projects
   $scope.find = function () {
-    $http.get('https://still-eyrie-27550.herokuapp.com/api/projects')
+    $http.get(config.api + '/projects')
     .success(function(data) {
       $scope.projects = data;
       shuffle(data);
@@ -100,7 +100,7 @@ angular.module('starter.projects', ['ionic'])
 
   // Find one project
   $scope.findOne = function () {
-    $http.get('https://still-eyrie-27550.herokuapp.com/api/projects/' + $stateParams.projectId)
+    $http.get(config.api + '/projects/' + $stateParams.projectId)
     .success(function(data) {
       $scope.project = data;
     })
