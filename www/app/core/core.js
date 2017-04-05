@@ -1,14 +1,22 @@
-angular.module('starter.core', ['ionic', 'login.controllers'])
+angular.module('starter.core', ['ionic', 'user.controllers'])
 
 .config(function($stateProvider, $urlRouterProvider) {
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/home');
+  $urlRouterProvider.otherwise('/app/login');
   $stateProvider
     .state('app', {
       url: '/app',
       abstract: true,
       templateUrl: 'app/core/menu.html',
-      controller: 'LoginCtrl'
+      controller: 'UserCtrl'
+    })
+    .state('app.login', {
+      url: '/login',
+      views: {
+        'menuContent': {
+          templateUrl: 'app/users/views/login.html'
+        }
+      }
     })
     .state('app.home', {
       url: '/home',

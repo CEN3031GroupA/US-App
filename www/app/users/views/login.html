@@ -1,20 +1,23 @@
-<ion-modal-view>
-  <ion-header-bar>
-    <h1 class="title">Login</h1>
-    <div class="buttons">
-      <button class="button button-clear" ng-click="closeLogin()">Close</button>
-    </div>
-  </ion-header-bar>
-  <ion-content>
-    <form ng-submit="doLogin()">
+<ion-view  hide-nav-bar="true" ng-controller="UserCtrl">
+  <ion-nav-header class="bar login-header" align-title="center">
+    <ion-title>
+      <img class='homelogo' src='img/Ultimate_Logo.png'/>
+    </ion-title>
+  </ion-nav-header>
+  <div class="bar bar-subheader item-input-inset subheader-bar">
+    <h4 class="title">48 Hours Hackathon</h4>
+  </div>
+  <ion-content class="has-subheader">
+    <div ng-if="error">{{error}}</div>
+    <form ng-submit="signin()">
       <div class="list">
         <label class="item item-input">
-          <span class="input-label">Username</span>
-          <input type="text" ng-model="loginData.username">
+          <span class="input-label">Email</span>
+          <input required type="text" ng-model="email">
         </label>
         <label class="item item-input">
           <span class="input-label">Password</span>
-          <input type="password" ng-model="loginData.password">
+          <input required type="password" ng-model="password">
         </label>
         <label class="item">
           <button class="button button-block button-positive" type="submit">Log in</button>
@@ -22,4 +25,4 @@
       </div>
     </form>
   </ion-content>
-</ion-modal-view>
+</ion-view>

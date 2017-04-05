@@ -1,6 +1,15 @@
-angular.module('login.controllers', [])
+angular.module('user.controllers', [])
 
-.controller('LoginCtrl', function($scope, $ionicModal, $timeout) {
+.factory('Authentication', ['$window',
+  function ($window) {
+    var auth = {
+      user: $window.user
+    };
+    return auth;
+  }
+])
+
+.controller('UserCtrl', function($scope, $http, $location, $state, Authentication) {
 
   // With the new view caching in Ionic, Controllers are only called
   // when they are recreated or on app start, instead of every page change.
@@ -8,35 +17,31 @@ angular.module('login.controllers', [])
   // listen for the $ionicView.enter event:
   //$scope.$on('$ionicView.enter', function(e) {
   //});
+  $scope.authentication = Authentication;
 
-  // Form data for the login modal
-  $scope.loginData = {};
+  // If user is signed in then redirect back home
+  if ($scope.authentication.user) {
+    $location.path('/');
+  }
 
-  // Create the login modal that we will use later
-  $ionicModal.fromTemplateUrl('app/users/views/login.html', {
-    scope: $scope
-  }).then(function(modal) {
-    $scope.modal = modal;
-  });
+  $scope.signin = function () {
+    var credentials = {
+      email: this.email,
+      password: this.password
+    };
 
-  // Triggered in the login modal to close it
-  $scope.closeLogin = function() {
-    $scope.modal.hide();
+    $scope.error = null;
+
+    $http.post(config.api + '/auth/signin', credentials).success(function (response) {
+      // If successful we assign the response to the global user model
+      $scope.authentication.user = response;
+
+      // And redirect to the previous or home page
+      $state.go('app.home');
+    }).error(function (response) {
+      $scope.error = response.message;
+    });
   };
 
-  // Open the login modal
-  $scope.login = function() {
-    $scope.modal.show();
-  };
 
-  // Perform the login action when the user submits the login form
-  $scope.doLogin = function() {
-    console.log('Doing login', $scope.loginData);
-
-    // Simulate a login delay. Remove this and replace with your login
-    // code if using a login system
-    $timeout(function() {
-      $scope.closeLogin();
-    }, 1000);
-  };
 });
