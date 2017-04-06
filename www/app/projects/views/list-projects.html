@@ -5,10 +5,11 @@
       <input type="search" ng-model="query" placeholder="Search">
     </label>
   </div>
-  <ion-content class="has-subheader">
+  <ion-content class="has-subheader item-text-wrap padding">
     <ion-list>
-      <ion-item ng-repeat="project in projects | filter: query" href="#/app/projects/{{project._id}}">
-        {{project.title}}
+      <ion-item class="project-item" ng-repeat="project in projects | filter: query" href="#/app/projects/{{project._id}}">
+        <h2>{{project.title}}</h2>
+        <p>{{project.description.short}}</p>
       </ion-item>
     </ion-list>
   </ion-content>

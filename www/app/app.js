@@ -8,6 +8,7 @@ angular.module('starter',
 [
   'ionic',
   'starter.core',
+  'starter.ideas',
   'starter.projects'
 ])
 

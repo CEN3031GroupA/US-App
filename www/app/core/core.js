@@ -26,14 +26,33 @@ angular.module('starter.core', ['ionic', 'user.controllers'])
         }
       }
     })
-    .state('app.search', {
-      url: '/search',
+    /* Ideas */
+    .state('app.list-ideas', {
+      url: '/ideas',
       views: {
         'menuContent': {
-          templateUrl: 'app/search.html'
+          templateUrl: 'app/ideas/views/list-ideas.html'
         }
       }
     })
+    .state('app.view-idea', {
+      url: '/ideas/:ideaId',
+      views: {
+        'menuContent': {
+          templateUrl: 'app/ideas/views/view-idea.html'
+        }
+      }
+    })
+    .state('app.create-idea', {
+      url: '/create-idea',
+      views: {
+        'menuContent': {
+          templateUrl: 'app/ideas/views/create-idea.html',
+          controller: ''
+        }
+      }
+    })
+    /* Projects */
     .state('app.list-projects', {
       url: '/projects',
       views: {

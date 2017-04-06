@@ -52,6 +52,11 @@
   color: white;
 }
 
+/* Project List */
+.project-item{
+  margin-bottom:10px;
+}
+
 /* View Single Project */
 .voteButton {
   background-color: #509E2F;
