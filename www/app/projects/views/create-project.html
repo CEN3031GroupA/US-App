@@ -13,6 +13,12 @@
           </div>
           <input type="text" name="title" ng-model="title" required>
         </div>
+        <div>
+          <div>
+            <p>YouTube Video</p>
+          </div>
+          <input name="youtube" ng-model="youtube">
+        </div>
         <div class="form-group" show-errors>
           <div ng-messages="projectForm.details.$error" role="alert">
             <p class="help-block error-text" ng-message="required">Short Description of Project*</p>

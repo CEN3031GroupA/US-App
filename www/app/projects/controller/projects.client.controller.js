@@ -1,4 +1,23 @@
-angular.module('starter.projects', ['ionic', 'starter.config', 'user.controllers'])
+angular.module('starter.projects', ['ionic', 'ngCordova', 'starter.config', 'user.controllers'])
+
+.config(function ($sceDelegateProvider) {
+  $sceDelegateProvider.resourceUrlWhitelist([
+    'self',                    // trust all resources from the same origin
+    '*://www.youtube.com/**'   // trust all resources from `www.youtube.com`
+  ]);
+})
+
+.controller('QRCtrl', function($scope, $cordovaBarcodeScanner) {
+  $scope.scanBarcode = function() {
+        $cordovaBarcodeScanner.scan().then(function(imageData) {
+            alert(imageData.text);
+            console.log("Barcode Format -> " + imageData.format);
+            console.log("Cancelled -> " + imageData.cancelled);
+        }, function(error) {
+            console.log("An error happened -> " + error);
+        });
+    };
+})
 
 .controller('ProjectsController', function($scope, $http, $stateParams, $location, $rootScope, $window) {
   var currentUser = JSON.parse($window.localStorage.getItem("currentUser"));
@@ -153,6 +172,22 @@ angular.module('starter.projects', ['ionic', 'starter.config', 'user.controllers
       name: 'Dabo'
     }
   ];
+
+  $scope.embed = function (url) {
+    $scope.videoID = getYouTubeID(url);
+    return ('http://www.youtube.com/embed/' + $scope.videoID);
+  };
+
+  function getYouTubeID (url) {
+    var regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
+    var match = url.match(regExp);
+
+    if (match && match[2].length === 11) {
+      return match[2];
+    } else {
+      return 'error';
+    }
+  }
 
   function shuffle(array) {
       var currentIndex = array.length, temporaryValue, randomIndex;

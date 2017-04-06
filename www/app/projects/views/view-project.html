@@ -2,6 +2,9 @@
   <ion-content class="padding">
     <h1>{{project.title}}</h1>
     <p>Category: {{project.category}}</p>
+    <div ng-show="project.youtube != null">
+      <iframe width="100%" height="300" ng-src="{{embed(project.youtube)}}" frameborder="0" allowfullscreen></iframe>
+    </div>
     <p>{{project.description.long}}</p>
     <div>
       <button ng-click="hasVoted ? unvote(project) : vote(project)"
