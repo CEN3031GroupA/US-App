@@ -4,6 +4,11 @@
   background-color: #509e2f;
 }
 
+.login-button {
+  background-color: #509e2f;
+  color: white;
+}
+
 /* Global Header */
 .header-bar {
   background-color: #509e2f;
@@ -48,6 +53,12 @@
 }
 
 /* View Single Project */
-#voteButton {
-  background-color: #509e2f;
+.voteButton {
+  background-color: #509E2F;
+  color: white;
+}
+
+.unvoteButton {
+  background-color: #63666A;
+  color: white;
 }

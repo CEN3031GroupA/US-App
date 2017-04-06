@@ -1,7 +1,7 @@
-angular.module('starter.projects', ['ionic', 'starter.config'])
+angular.module('starter.projects', ['ionic', 'starter.config', 'user.controllers'])
 
-.controller('ProjectsController', function($scope, $http, $stateParams, $location, $rootScope) {
-
+.controller('ProjectsController', function($scope, $http, $stateParams, $location, $rootScope, $window) {
+  var currentUser = JSON.parse($window.localStorage.getItem("currentUser"));
 
   if (!$rootScope.activeProject) {
     $rootScope.activeProject = {
@@ -103,11 +103,42 @@ angular.module('starter.projects', ['ionic', 'starter.config'])
     $http.get(config.api + '/projects/' + $stateParams.projectId)
     .success(function(data) {
       $scope.project = data;
+
+      /* Initialize voting button */
+      for(var i in currentUser.votedProjects) {
+        if (currentUser.votedProjects[i] === $stateParams.projectId) {
+          $scope.hasVoted = true;
+        }
+      }
     })
     .error(function(){
       console.log('data error');
     })
   };
+
+  $scope.hasVoted = false;
+
+  $scope.unvote = function (project) {
+    for (var i in currentUser.votedProjects) {
+      if (currentUser.votedProjects[i] === project._id) {
+        currentUser.votedProjects.splice(i, 1);
+        project.votes -= 1;
+        $scope.hasVoted = false;
+      }
+    }
+    $http.put(config.api + '/projects/' + project._id, project, { votes: project.votes });
+    $http.put(config.api + '/user/' + currentUser._id, currentUser, { votedProjects : currentUser.votedProjects });
+  };
+
+  $scope.vote = function (project) {
+    currentUser.votedProjects.push(project._id);
+    project.votes += 1;
+    $scope.hasVoted = true;
+
+    $http.put(config.api + '/projects/' + project._id, project, { votes: project.votes });
+    $http.put(config.api + '/user/' + currentUser._id, currentUser, { votedProjects : currentUser.votedProjects });
+  };
+
 
 
   // Fake data for now

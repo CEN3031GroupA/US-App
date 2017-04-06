@@ -3,7 +3,11 @@
     <h1>{{project.title}}</h1>
     <p>Category: {{project.category}}</p>
     <p>{{project.description.long}}</p>
-    <button class="button button-block" id="voteButton">Vote!</button>
-    <button ng-click="remove(project);">remove</button>
+    <div>
+      <button ng-click="hasVoted ? unvote(project) : vote(project)"
+              class="button button-block" ng-class="hasVoted ? 'unvoteButton' : 'voteButton'">
+        <span>{{hasVoted ? 'Thanks for Voting!' : 'Vote!'}}</span>
+      </button>
+    </div>
   </ion-content>
 </ion-view>
