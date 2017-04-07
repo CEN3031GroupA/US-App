@@ -1,7 +1,14 @@
 <ion-view ng-controller="ProjectsController" ng-init="findOne();">
   <ion-content class="padding">
-    <h1>{{project.title}}</h1>
-    <p>Category: {{project.category}}</p>
+    <div class="row">
+      <div class="col col-8">
+        <h1>{{project.title}}</h1>
+        <p>Category: {{project.category}}</p>
+      </div>
+      <div class="pull-right">
+        <qr text="'project._id'" size="100"></qr>
+      </div>
+    </div>
     <div ng-show="project.youtube != null">
       <iframe width="100%" height="300" ng-src="{{embed(project.youtube)}}" frameborder="0" allowfullscreen></iframe>
     </div>

@@ -1,25 +1,25 @@
 <ion-view ng-controller="ProjectsController">
   <ion-content class="padding">
+    <h3>Create Project:</h3>
+    <h4>Pick a Category</h4>
     <div>
       <span>Step 2/3</span>
       <progress value="2" max="3"></progress>
     </div>
     <div>
       <form name="projectFormCategories" class="form-verical">
-        <h2>Pick a Category</h2>
         <div class="form-group">
           <section>
-            <div>
-              <label class="button button-small {{ activeCategory.id == category.id ? 'active' : '' }}" ng-click="setActiveCategory(category)" ng-repeat="category in categories">
-                <input type="radio" name="options" id="option1" autocomplete="off" checked> {{category.title}}
-              </label>
+            <div class="button-bar padding">
+              <a class="button button-small {{ activeCategory.id == category.id ? 'active' : '' }}"
+                 ng-click="setActiveCategory(category)" ng-repeat="category in categories">{{category.title}}</a>
             </div>
             <div class="category-description">
               {{activeCategory.description}}
             </div>
           </section>
         </div>
-        <button type="submit" ng-click="saveProjectCategory()">Next ></button>
       </form>
+      <button type="submit" ng-click="saveProjectCategory()">Next ></button>
     </div>
 </ion-view>

@@ -1,4 +1,4 @@
-angular.module('starter.projects', ['ionic', 'ngCordova', 'starter.config', 'user.controllers'])
+angular.module('starter.projects', ['ionic', 'ngCordova', 'starter.config', 'user.controllers', 'ja.qr'])
 
 .config(function ($sceDelegateProvider) {
   $sceDelegateProvider.resourceUrlWhitelist([
