@@ -1,5 +1,5 @@
 <ion-view  hide-nav-bar="true" ng-controller="UserCtrl">
-  <ion-nav-header class="bar login-header" align-title="center">
+  <ion-nav-header class="bar bar-header login-header" align-title="center">
     <ion-title>
       <img class='homelogo' src='img/Ultimate_Logo.png'/>
     </ion-title>
@@ -9,7 +9,7 @@
   </div>
   <ion-content class="has-subheader">
     <div ng-if="error">{{error}}</div>
-    <form ng-submit="signin()">
+    <form ng-submit="signin();this.reset()">
       <div class="list">
         <label class="item item-input">
           <span class="input-label">Email</span>

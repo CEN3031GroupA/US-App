@@ -23,7 +23,8 @@ angular.module('user.controllers', [])
 
     $scope.error = null;
 
-    $http.post(config.api + '/auth/signin', credentials).success(function (response) {
+    $http.post(config.api + '/auth/signin', credentials)
+      .success(function (response) {
       // If successful we assign the response to the global user model
       $window.localStorage.setItem("currentUser", angular.toJson(response));
 

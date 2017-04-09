@@ -10,7 +10,7 @@
       </div>
     </div>
     <div ng-show="project.youtube != null">
-      <iframe width="100%" height="300" ng-src="{{embed(project.youtube)}}" frameborder="0" allowfullscreen></iframe>
+      <iframe width="100%" height="300" ng-src="{{project.youtube}}" frameborder="0" allowfullscreen></iframe>
     </div>
     <p>{{project.description.long}}</p>
     <div>
@@ -19,5 +19,15 @@
         <span>{{hasVoted ? 'Thanks for Voting!' : 'Vote!'}}</span>
       </button>
     </div>
+
+    <h3 class="project-team">Team members</h3>
+    <ul class="team-list">
+      <li>
+        <i class="icon ion-person"></i> <span ng-bind="project.owner.firstName"></span> <span ng-bind="project.owner.lastName"></span> - <em>Owner</em>
+      </li>
+      <li ng-repeat="member in project.team">
+        <i class="icon ion-person"></i> <span ng-bind="member.firstName"></span> <span ng-bind="member.lastName"></span> - <em>Member</em>
+      </li>
+    </ul>
   </ion-content>
 </ion-view>
