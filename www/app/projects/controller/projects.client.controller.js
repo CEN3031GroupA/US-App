@@ -1,10 +1,35 @@
-angular.module('starter.projects', ['ionic', 'starter.config', 'user.controllers', 'ja.qr'])
+angular.module('starter.projects', ['ionic','ngCordova','starter.config', 'user.controllers', 'ja.qr'])
 
 .config(function ($sceDelegateProvider) {
   $sceDelegateProvider.resourceUrlWhitelist([
     'self',                    // trust all resources from the same origin
     '*://www.youtube.com/**'   // trust all resources from `www.youtube.com`
   ]);
+})
+
+.controller('QRCtrl', function($scope, $window, $cordovaBarcodeScanner) {
+  var currentUser = JSON.parse($window.localStorage.getItem("currentUser"));
+
+  $scope.scanBarcode = function () {
+    $cordovaBarcodeScanner.scan().then(function (data) {
+      $http.get(config.api + '/projects/' + data.text)
+        .success(function(data) {
+          $scope.project = data;
+          $scope.hasVoted = currentUser.votedProjects.indexOf(data._id) !== -1;
+
+          if($scope.hasVoted) {
+            vote($scope.project);
+          } else {
+            unvote($scope.project);
+          }
+        })
+        .error(function(){
+          console.log('data error');
+        });
+    }, function (error) {
+      alert("An error happened ->" + error);
+    });
+  };
 })
 
 .controller('ProjectsController', function($scope, $http, $stateParams, $location, $rootScope, $window) {
@@ -102,6 +127,10 @@ angular.module('starter.projects', ['ionic', 'starter.config', 'user.controllers
     .error(function(){
       console.log('data error');
     })
+  };
+
+  $scope.stringify = function(projectId) {
+
   };
 
   /* Initialize voting field */
