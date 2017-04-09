@@ -29,10 +29,7 @@
     "cordova-plugin-device",
     "cordova-plugin-splashscreen",
     "ionic-plugin-keyboard",
-    {
-      "locator": "https://github.com/phonegap/phonegap-plugin-barcodescanner.git",
-      "id": "phonegap-plugin-barcodescanner"
-    },
+    "phonegap-plugin-barcodescanner",
     "cordova-plugin-compat"
   ],
   "cordovaPlatforms": [
