@@ -7,32 +7,7 @@ angular.module('starter.projects', ['ionic','ngCordova','starter.config', 'user.
   ]);
 })
 
-.controller('QRCtrl', function($scope, $window, $cordovaBarcodeScanner) {
-  var currentUser = JSON.parse($window.localStorage.getItem("currentUser"));
-
-  $scope.scanBarcode = function () {
-    $cordovaBarcodeScanner.scan().then(function (data) {
-      $http.get(config.api + '/projects/' + data.text)
-        .success(function(data) {
-          $scope.project = data;
-          $scope.hasVoted = currentUser.votedProjects.indexOf(data._id) !== -1;
-
-          if($scope.hasVoted) {
-            vote($scope.project);
-          } else {
-            unvote($scope.project);
-          }
-        })
-        .error(function(){
-          console.log('data error');
-        });
-    }, function (error) {
-      alert("An error happened ->" + error);
-    });
-  };
-})
-
-.controller('ProjectsController', function($scope, $http, $stateParams, $location, $rootScope, $window) {
+.controller('ProjectsController', function($scope, $http, $stateParams, $location, $rootScope, $window, $cordovaBarcodeScanner) {
   var currentUser = JSON.parse($window.localStorage.getItem("currentUser"));
 
   if (!$rootScope.activeProject) {
@@ -156,6 +131,29 @@ angular.module('starter.projects', ['ionic','ngCordova','starter.config', 'user.
       .error(function () {
         console.log('data error');
       });
+  };
+
+  $scope.scanBarcode = function () {
+    $cordovaBarcodeScanner.scan().then(function (data) {
+      $http.get(config.api + '/projects/' + data.text)
+        .success(function(data) {
+          $scope.project = data;
+          $scope.hasVoted = currentUser.votedProjects.indexOf(data._id) !== -1;
+
+          if($scope.hasVoted) {
+            unvote($scope.project);
+            alert("unvoted!");
+          } else {
+            vote($scope.project);
+            alert("voted!");
+          }
+        })
+        .error(function(){
+          console.log('Could not retrieve project!');
+        });
+    }, function (error) {
+      alert("Scanning error: " + error);
+    });
   };
 
   $scope.loadUsers = function() {
