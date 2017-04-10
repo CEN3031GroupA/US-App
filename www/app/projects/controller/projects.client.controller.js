@@ -136,23 +136,25 @@ angular.module('starter.projects', ['ionic','ngCordova','starter.config', 'user.
   $scope.scanBarcode = function () {
     $cordovaBarcodeScanner.scan().then(function (data) {
       $http.get(config.api + '/projects/' + data.text)
-        .success(function(data) {
-          $scope.project = data;
-          $scope.hasVoted = currentUser.votedProjects.indexOf(data._id) !== -1;
+        .success(function (data) {
+          var project = data;
+          $scope.hasVoted = currentUser.votedProjects.indexOf(project._id) !== -1;
 
-          if($scope.hasVoted) {
-            unvote($scope.project);
-            alert("unvoted!");
+          console.log(project);
+          console.log($scope.hasVoted);
+
+          if ($scope.hasVoted) {
+            console.log("already voted!!");
           } else {
-            vote($scope.project);
-            alert("voted!");
+            vote(project);
+            console.log("voted!");
           }
         })
-        .error(function(){
+        .error(function () {
           console.log('Could not retrieve project!');
         });
     }, function (error) {
-      alert("Scanning error: " + error);
+      console.log("Scanning error: " + error);
     });
   };
 
