@@ -93,19 +93,17 @@ angular.module('starter.projects', ['ionic','ngCordova','starter.config', 'user.
   };
 
   // Find one project
+  $scope.projectid = null;
   $scope.findOne = function () {
     $http.get(config.api + '/projects/' + $stateParams.projectId)
     .success(function(data) {
       $scope.project = data;
       $scope.hasVoted = currentUser.votedProjects.indexOf(data._id) !== -1;
+      $scope.projectid = $scope.project._id;
     })
     .error(function(){
       console.log('data error');
     })
-  };
-
-  $scope.stringify = function(projectId) {
-
   };
 
   /* Initialize voting field */
@@ -132,29 +130,23 @@ angular.module('starter.projects', ['ionic','ngCordova','starter.config', 'user.
         console.log('data error');
       });
   };
-  var vm = this;
+
   $scope.scanBarcode = function () {
     $cordovaBarcodeScanner.scan().then(function (data) {
-      $http.get(config.api + '/projects/' + data.text)
-        .success(function (data) {
-          var project = data;
-          $scope.hasVoted = currentUser.votedProjects.indexOf(project._id) !== -1;
-
-          if ($scope.hasVoted) {
-            alert("already voted!!");
-          } else {
-            vote(project);
-            alert("voted!");
-          }
-
-          vm.scanResults = "We got a barcode" +
-            "Project: " + project + "n" +
-            "hasVoted: " + $scope.hasVoted + "n" +
-            "Cancelled: " + result.cancelled;
-        })
-        .error(function () {
-          alert('Could not retrieve project!');
-        });
+      $scope.hasVoted = currentUser.votedProjects.indexOf(data.text) !== -1;
+      if(!$scope.hasVoted) {
+        $http.put('/api/projects/' + data.text + '/vote')
+          .success(function() {
+            $scope.hasVoted = true;
+            alert($scope.hasVoted);
+          })
+          .error(function () {
+            console.log('data error');
+            alert(data);
+          });
+      } else {
+        alert($scope.hasVoted);
+      }
     }, function (error) {
       console.log("Scanning error: " + error);
     });
