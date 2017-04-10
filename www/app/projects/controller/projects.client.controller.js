@@ -132,7 +132,7 @@ angular.module('starter.projects', ['ionic','ngCordova','starter.config', 'user.
         console.log('data error');
       });
   };
-
+  var vm = this;
   $scope.scanBarcode = function () {
     $cordovaBarcodeScanner.scan().then(function (data) {
       $http.get(config.api + '/projects/' + data.text)
@@ -140,18 +140,20 @@ angular.module('starter.projects', ['ionic','ngCordova','starter.config', 'user.
           var project = data;
           $scope.hasVoted = currentUser.votedProjects.indexOf(project._id) !== -1;
 
-          console.log(project);
-          console.log($scope.hasVoted);
-
           if ($scope.hasVoted) {
-            console.log("already voted!!");
+            alert("already voted!!");
           } else {
             vote(project);
-            console.log("voted!");
+            alert("voted!");
           }
+
+          vm.scanResults = "We got a barcode" +
+            "Project: " + project + "n" +
+            "hasVoted: " + $scope.hasVoted + "n" +
+            "Cancelled: " + result.cancelled;
         })
         .error(function () {
-          console.log('Could not retrieve project!');
+          alert('Could not retrieve project!');
         });
     }, function (error) {
       console.log("Scanning error: " + error);
