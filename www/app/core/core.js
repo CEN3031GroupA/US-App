@@ -97,5 +97,42 @@ angular.module('starter.core', ['ionic', 'user.controllers'])
           controller: ''
         }
       }
+    })
+    /* Admin */
+    .state('app.admin', {
+      url: '/admin',
+      views: {
+        'menuContent': {
+          templateUrl: 'app/users/views/admin/admin-home.html',
+          controller: ''
+        }
+      }
+    })
+    .state('app.create-category', {
+      url: '/admin/create-category',
+      views: {
+        'menuContent': {
+          templateUrl: 'app/categories/views/create-category.html',
+          controller: ''
+        }
+      }
+    })
+    .state('app.list-category', {
+      url: '/admin/list-category',
+      views: {
+        'menuContent': {
+          templateUrl: 'app/categories/views/list-category.html',
+          controller: ''
+        }
+      }
+    })
+    .state('app.edit-category', {
+      url: '/admin/edit-category',
+      views: {
+        'menuContent': {
+          templateUrl: 'app/categories/views/edit-category.html',
+          controller: ''
+        }
+      }
     });
 });

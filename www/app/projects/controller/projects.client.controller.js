@@ -70,7 +70,7 @@ angular.module('starter.projects', ['ionic','ngCordova','starter.config', 'user.
 
   // Update existing project
   $scope.update = function (project) {
-    $http.put(config.api + '/projects' + project._id)
+    $http.put(config.api + '/projects/' + project._id)
       .success(function() {
         $location.path('app/projects/' + project._id);
       })
@@ -93,13 +93,13 @@ angular.module('starter.projects', ['ionic','ngCordova','starter.config', 'user.
   };
 
   // Find one project
-  $scope.projectid = null;
+  $scope.QRProjectId = null; //Used for QR string
   $scope.findOne = function () {
     $http.get(config.api + '/projects/' + $stateParams.projectId)
     .success(function(data) {
       $scope.project = data;
       $scope.hasVoted = currentUser.votedProjects.indexOf(data._id) !== -1;
-      $scope.projectid = $scope.project._id;
+      $scope.QRProjectId = $scope.project._id;
     })
     .error(function(){
       console.log('data error');
@@ -111,7 +111,7 @@ angular.module('starter.projects', ['ionic','ngCordova','starter.config', 'user.
 
   // Vote for a project
   $scope.vote = function (project) {
-    $http.put('/api/projects/' + project._id + '/vote')
+    $http.put(config.api + '/projects/' + project._id + '/vote')
       .success(function() {
         $scope.hasVoted = true;
       })
@@ -122,7 +122,7 @@ angular.module('starter.projects', ['ionic','ngCordova','starter.config', 'user.
 
   // Unvote for a project
   $scope.unvote = function (project) {
-    $http.delete('/api/projects/' + project._id + '/vote')
+    $http.delete(config.api + '/projects/' + project._id + '/vote')
       .success(function() {
         $scope.hasVoted = false;
       })
@@ -135,7 +135,7 @@ angular.module('starter.projects', ['ionic','ngCordova','starter.config', 'user.
     $cordovaBarcodeScanner.scan().then(function (data) {
       $scope.hasVoted = currentUser.votedProjects.indexOf(data.text) !== -1;
       if(!$scope.hasVoted) {
-        $http.put('/api/projects/' + data.text + '/vote')
+        $http.put(config.api + '/projects/' + data.text + '/vote')
           .success(function() {
             $scope.hasVoted = true;
             alert($scope.hasVoted);
@@ -206,4 +206,4 @@ angular.module('starter.projects', ['ionic','ngCordova','starter.config', 'user.
 
       return array;
     }
-});;
+});
