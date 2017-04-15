@@ -1,5 +1,9 @@
 angular.module('starter.core', ['ionic', 'user.controllers'])
 
+.controller('CoreCtrl', function($scope, $window) {
+  $scope.user = JSON.parse($window.localStorage.getItem("currentUser"));
+})
+
 .config(function($stateProvider, $urlRouterProvider) {
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/app/login');
