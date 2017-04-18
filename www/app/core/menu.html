@@ -19,7 +19,7 @@
         <ion-item menu-close href="#/app/home">
           Home
         </ion-item>
-        <ion-item menu-close href="#/app/admin" ng-show="user.isAdmin == true">
+        <ion-item menu-close href="#/app/admin" ng-show="{{user.isAdmin}}">
           Admin
         </ion-item>
         <ion-item menu-close href="#/app/projects">

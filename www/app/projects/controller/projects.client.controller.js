@@ -98,8 +98,17 @@ angular.module('starter.projects', ['ionic','ngCordova','starter.config', 'user.
     $http.get(config.api + '/projects/' + $stateParams.projectId)
     .success(function(data) {
       $scope.project = data;
-      $scope.hasVoted = currentUser.votedProjects.indexOf(data._id) !== -1;
       $scope.QRProjectId = $scope.project._id;
+
+      $http.get(config.api + '/user/' + currentUser._id)
+        .success(function(user) {
+          $scope.hasVoted = user.votedProjects.indexOf(data._id) !== -1;
+          console.log(user);
+          console.log($scope.hasVoted);
+        })
+        .error(function() {
+          console.log('could not retrieve user');
+        });
     })
     .error(function(){
       console.log('data error');
@@ -138,14 +147,14 @@ angular.module('starter.projects', ['ionic','ngCordova','starter.config', 'user.
         $http.put(config.api + '/projects/' + data.text + '/vote')
           .success(function() {
             $scope.hasVoted = true;
-            alert($scope.hasVoted);
+            alert("voted!");
           })
           .error(function () {
             console.log('data error');
-            alert(data);
+            alert("vote error!");
           });
       } else {
-        alert($scope.hasVoted);
+        alert("already voted!");
       }
     }, function (error) {
       console.log("Scanning error: " + error);
