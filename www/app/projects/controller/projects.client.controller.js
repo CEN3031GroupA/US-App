@@ -103,8 +103,6 @@ angular.module('starter.projects', ['ionic','ngCordova','starter.config', 'user.
       $http.get(config.api + '/user/' + currentUser._id)
         .success(function(user) {
           $scope.hasVoted = user.votedProjects.indexOf(data._id) !== -1;
-          console.log(user);
-          console.log($scope.hasVoted);
         })
         .error(function() {
           console.log('could not retrieve user');
