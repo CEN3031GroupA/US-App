@@ -138,5 +138,14 @@ angular.module('starter.core', ['ionic', 'user.controllers'])
           controller: ''
         }
       }
+    })
+    .state('app.view-vote-results', {
+      url: '/admin/vote-results',
+      views: {
+        'menuContent': {
+          templateUrl: 'app/projects/views/view-vote-results.html',
+          controller: ''
+        }
+      }
     });
 });

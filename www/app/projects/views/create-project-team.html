@@ -1,30 +1,48 @@
-<ion-view ng-controller="ProjectsController">
-  <ion-content class="padding">
-    <h3>Create Project:</h3>
-    <h4>Add Team Members</h4>
+<ion-view title="<img class='homelogo' src='img/Ultimate_Logo.png'/>">
+  <div class="bar bar-subheader item-input-inset subheader-bar">
+    <h4 class="title">48 Hours Hackathon</h4>
+  </div>
+  <ion-content class="has-subheader padding" ng-controller="ProjectsController" ng-init="loadUsers();">
+    <h3 style="text-align: center">Create Project:</h3>
+    <hr>
+    <h4 style="text-align: center">Step 3/3: Add Team Members</h4>
     <div>
-      <span>Step 3/3</span>
       <progress value="3" max="3"></progress>
     </div>
+
+    <h4 style="text-align: center">Current Team</h4>
+    <hr>
     <div class="row">
-      <ul class="team-list">
-        <li><i class="icon ion-person"></i><i class="icon ion-plus"></i></li>
-      </ul>
+      <div class="col"><i class="icon ion-person"></i></div>
+      <div class="col"><span ng-bind="owner.firstName"></span> <span ng-bind="owner.lastName"></span></div>
+      <div class="col"><span ng-bind="owner.email"</span></div>
+      <div class="col">Owner</div>
     </div>
+    <div class="row" ng-repeat="member in team">
+      <div class="col"><i class="icon ion-person"></i></div>
+      <div class="col">{{member.firstName}} {{member.lastName}}</div>
+      <div class="col">{{member.email}}</div>
+      <div class="text-right"><button ng-click="removeMember(member)"><i class="icon ion-trash-a"></i></button></div>
+
+    </div>
+    <br>
+
+    <h4 style="text-align: center">Add Members</h4>
+    <hr>
     <div class="bar item-input-inset bar-light">
       <label class="item-input-wrapper">
         <i class="icon ion-search placeholder-icon"></i>
         <input type="search" ng-model="query" placeholder="Search">
       </label>
     </div>
-
-    <div>
-      <ion-list>
-        <ion-item class="team-list item-icon-left item-icon-right" ng-repeat="teamuser in teamusers | filter: query">
-          <i class="icon ion-person"></i><h2>{{teamuser.name}}</h2><i class="icon ion-plus"></i>
-        </ion-item>
-      </ion-list>
+    <div class="row" ng-repeat="user in users | filter: query" style="text-align: left">
+      <div class="col"><i class="icon ion-person"></i></div>
+      <div class="col">{{user.firstName}} {{user.lastName}}</div>
+      <div class="col">{{user.email}}</div>
+      <div class="col text-right"><button ng-click="addMember(user)"><i class="icon ion-plus"></i></button></div>
     </div>
+    <br>
+
     <button ng-click="create()">Add Project</button>
   </ion-content>
 </ion-view>

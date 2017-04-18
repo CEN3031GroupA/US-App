@@ -1,39 +1,58 @@
-<ion-view ng-controller="ProjectsController">
-  <ion-content class="padding">
-    <h3>Create Project:</h3>
-    <h4>Add Project Details</h4>
+<ion-view title="<img class='homelogo' src='img/Ultimate_Logo.png'/>">
+  <div class="bar bar-subheader item-input-inset subheader-bar">
+    <h4 class="title">48 Hours Hackathon</h4>
+  </div>
+  <ion-content class="has-subheader padding" ng-controller="ProjectsController">
+    <h3 style="text-align: center">Create Project:</h3>
+    <hr>
+    <h4 style="text-align: center">Step 1/3: Add Project Details</h4>
     <div>
-      <span style="text-align: center;">Step 1/3</span>
+      <span style="text-align: center;"></span>
       <progress value="1" max="3"></progress>
     </div>
     <form name="projectForm">
-      <fieldset>
-        <div class="form-group" show-errors>
-          <div ng-messages="projectForm.title.$error" role="alert">
-            <p class="help-block error-text" ng-message="required">Title*</p>
-          </div>
-          <input type="text" name="title" ng-model="title" required>
+
+      <div class="form-group" show-errors>
+        <div ng-messages="projectForm.title.$error" role="alert">
+          <p class="help-block error-text" ng-message="required">Title *</p>
         </div>
+        <label class="item item-input" show-errors>
+          <input name="title" type="text" ng-model="title" required>
+        </label>
+      </div>
+      <br>
+
+      <div>
         <div>
-          <div>
-            <p>Embedded YouTube URL</p>
-          </div>
+          <p>Embedded YouTube URL</p>
+        </div>
+        <label class="item item-input" show-errors>
           <input type="text" name="youtube" ng-model="youtube">
+        </label>
+      </div>
+      <br>
+
+      <div class="form-group" show-errors>
+        <div ng-messages="projectForm.details.$error" role="alert">
+          <p class="help-block error-text" ng-message="required">Short Description of Project *</p>
         </div>
-        <div class="form-group" show-errors>
-          <div ng-messages="projectForm.details.$error" role="alert">
-            <p class="help-block error-text" ng-message="required">Short Description of Project*</p>
-          </div>
+        <label class="item item-input">
           <textarea name="short" rows="2" ng-model="short" required></textarea>
+        </label>
+      </div>
+      <br>
+
+      <div class="form-group" show-errors>
+        <div ng-messages="projectForm.details.$error" role="alert">
+          <p class="help-block error-text" ng-message="required">Detailed Description of Project *</p>
         </div>
-        <div class="form-group" show-errors>
-          <div ng-messages="projectForm.details.$error" role="alert">
-            <p class="help-block error-text" ng-message="required">Detailed Description of Project*</p>
-          </div>
+        <label class="item item-input">
           <textarea name="long" rows="5" ng-model="long" required></textarea>
-        </div>
-        <button type="submit" ng-click="saveProjectInfo()">Next ></button>
-      </fieldset>
+        </label>
+      </div>
+      <br>
+
+      <button type="submit" ng-click="saveProjectInfo()">Next ></button>
     </form>
   </ion-content>
 </ion-view>

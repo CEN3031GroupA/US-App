@@ -1,15 +1,21 @@
-<ion-view ng-controller="IdeasController">
-  <ion-content class="padding">
-    <h2 style="text-align: center;">Add Idea</h2>
+<ion-view title="<img class='homelogo' src='img/Ultimate_Logo.png'/>">
+  <div class="bar bar-subheader item-input-inset subheader-bar">
+    <h4 class="title">48 Hours Hackathon</h4>
+  </div>
+  <ion-content class="has-subheader padding" ng-controller="IdeasController">
+    <h3 style="text-align: center;">Add Idea</h3>
+    <hr>
     <form name="ideaForm">
-      <fieldset>
-        <div class="form-group" show-errors>
+      <div class="form-group" show-errors>
+        <label class="item item-input" show-errors>
           <input type="text" name="title" class="form-control" ng-model="title" placeholder="title" required>
-        </div>
-        <div class="form-group" show-errors>
+        </label>
+      </div>
+      <div class="form-group" show-errors>
+        <label class="item item-input" show-errors>
           <textarea name="details" rows="10" class="form-control" ng-model="details" placeholder="Describe your idea" required></textarea>
-        </div>
-      </fieldset>
+        </label>
+      </div>
     </form>
     <button type="submit" ng-click="create()">Submit</button>
   </ion-content>

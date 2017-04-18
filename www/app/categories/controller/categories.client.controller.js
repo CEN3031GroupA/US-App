@@ -1,6 +1,6 @@
 angular.module('starter.category', ['ionic', 'starter.config'])
 
-.controller('CategoryCtrl', function ($scope, $state, $stateParams, $location) {
+.controller('CategoryCtrl', function ($scope, $state, $stateParams, $location, $http) {
 
   /* Create Category */
   $scope.create = function () {

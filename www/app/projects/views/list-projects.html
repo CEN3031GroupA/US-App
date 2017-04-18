@@ -1,11 +1,17 @@
-<ion-view view-title="Projects" ng-init="find();">
-  <div class="bar bar-subheader item-input-inset bar-light">
-    <label class="item-input-wrapper">
-      <i class="icon ion-search placeholder-icon"></i>
-      <input type="search" ng-model="query" placeholder="Search">
-    </label>
+<ion-view title="<img class='homelogo' src='img/Ultimate_Logo.png'/>">
+  <div class="bar bar-subheader item-input-inset subheader-bar">
+    <h4 class="title">48 Hours Hackathon</h4>
   </div>
-  <ion-content class="has-subheader item-text-wrap padding">
+
+  <ion-content class="has-subheader item-text-wrap padding" ng-init="find();">
+    <h3 style="text-align: center">Projects</h3>
+    <hr>
+    <div class="bar item-input-inset bar-light">
+      <label class="item-input-wrapper">
+        <i class="icon ion-search placeholder-icon"></i>
+        <input type="search" ng-model="query" placeholder="Search">
+      </label>
+    </div>
     <ion-list>
       <ion-item class="project-item" ng-repeat="project in projects | filter: query" href="#/app/projects/{{project._id}}">
         <h2>{{project.title}}</h2>
