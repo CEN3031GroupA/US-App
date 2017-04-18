@@ -99,6 +99,7 @@ angular.module('starter.projects', ['ionic','ngCordova','starter.config', 'user.
     .success(function(data) {
       $scope.project = data;
       $scope.QRProjectId = $scope.project._id;
+      console.log($scope.project.youtube);
 
       $http.get(config.api + '/user/' + currentUser._id)
         .success(function(user) {
