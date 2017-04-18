@@ -2,20 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2fee8f05-17e4-4433-9f02-323c978199f5" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/app/categories/controller/categories.client.controller.js" afterPath="$PROJECT_DIR$/www/app/categories/controller/categories.client.controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/app/categories/views/create-category.html" afterPath="$PROJECT_DIR$/www/app/categories/views/create-category.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/app/core/core.js" afterPath="$PROJECT_DIR$/www/app/core/core.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/app/core/home.html" afterPath="$PROJECT_DIR$/www/app/core/home.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/app/ideas/views/create-idea.html" afterPath="$PROJECT_DIR$/www/app/ideas/views/create-idea.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/app/ideas/views/list-ideas.html" afterPath="$PROJECT_DIR$/www/app/ideas/views/list-ideas.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/app/ideas/views/view-idea.html" afterPath="$PROJECT_DIR$/www/app/ideas/views/view-idea.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/app/projects/views/create-project-category.html" afterPath="$PROJECT_DIR$/www/app/projects/views/create-project-category.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/app/projects/views/create-project-team.html" afterPath="$PROJECT_DIR$/www/app/projects/views/create-project-team.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/app/projects/views/create-project.html" afterPath="$PROJECT_DIR$/www/app/projects/views/create-project.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/app/projects/views/list-projects.html" afterPath="$PROJECT_DIR$/www/app/projects/views/list-projects.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/app/projects/controller/projects.client.controller.js" afterPath="$PROJECT_DIR$/www/app/projects/controller/projects.client.controller.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/app/projects/views/view-project.html" afterPath="$PROJECT_DIR$/www/app/projects/views/view-project.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/app/users/views/admin/admin-home.html" afterPath="$PROJECT_DIR$/www/app/users/views/admin/admin-home.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -33,21 +21,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
-      <file leaf-file-name="home.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/www/app/core/home.html">
+      <file leaf-file-name="ideas.client.controller.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/www/app/ideas/controller/ideas.client.controller.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="3" selection-end-column="6" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="view-idea.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/www/app/ideas/views/view-idea.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="3" column="8" lean-forward="false" selection-start-line="3" selection-start-column="8" selection-end-line="3" selection-end-column="8" />
+            <state relative-caret-position="196">
+              <caret line="30" column="35" lean-forward="true" selection-start-line="30" selection-start-column="35" selection-end-line="30" selection-end-column="35" />
               <folding />
             </state>
           </provider>
@@ -73,6 +51,9 @@
       <find>$scope.project</find>
       <find>project</find>
       <find>plus</find>
+      <find>youtube</find>
+      <find>ideas</find>
+      <find>get</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -110,7 +91,6 @@
         <option value="$PROJECT_DIR$/www/index.html" />
         <option value="$PROJECT_DIR$/www/app/config/config.js" />
         <option value="$PROJECT_DIR$/www/app/core/menu.html" />
-        <option value="$PROJECT_DIR$/www/app/projects/controller/projects.client.controller.js" />
         <option value="$PROJECT_DIR$/www/app/core/home.html" />
         <option value="$PROJECT_DIR$/www/app/categories/controller/categories.client.controller.js" />
         <option value="$PROJECT_DIR$/www/app/core/core.js" />
@@ -121,10 +101,11 @@
         <option value="$PROJECT_DIR$/www/app/projects/views/create-project-category.html" />
         <option value="$PROJECT_DIR$/www/app/projects/views/create-project-team.html" />
         <option value="$PROJECT_DIR$/www/app/projects/views/list-projects.html" />
-        <option value="$PROJECT_DIR$/www/app/projects/views/view-project.html" />
         <option value="$PROJECT_DIR$/www/app/ideas/views/create-idea.html" />
         <option value="$PROJECT_DIR$/www/app/ideas/views/list-ideas.html" />
         <option value="$PROJECT_DIR$/www/app/ideas/views/view-idea.html" />
+        <option value="$PROJECT_DIR$/www/app/projects/controller/projects.client.controller.js" />
+        <option value="$PROJECT_DIR$/www/app/projects/views/view-project.html" />
       </list>
     </option>
   </component>
@@ -145,8 +126,8 @@
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="563" />
-    <option name="width" value="1435" />
+    <option name="x" value="833" />
+    <option name="width" value="1165" />
     <option name="height" value="1024" />
   </component>
   <component name="ProjectView">
@@ -263,15 +244,15 @@
       <workItem from="1491795298899" duration="7998000" />
       <workItem from="1492227920331" duration="8103000" />
       <workItem from="1492468249416" duration="9867000" />
-      <workItem from="1492542433010" duration="5413000" />
+      <workItem from="1492542433010" duration="7665000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="99951000" />
+    <option name="totallyTimeSpent" value="102203000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="563" y="0" width="1435" height="1024" extended-state="0" />
+    <frame x="833" y="0" width="1165" height="1024" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
@@ -282,7 +263,7 @@
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.36247087" sideWeight="0.49791667" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21794872" sideWeight="0.49791667" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -358,20 +339,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.io-config.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ionic.config.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -390,13 +357,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/app/ideas/controller/ideas.client.controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="9" column="22" lean-forward="false" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
         </state>
       </provider>
     </entry>
@@ -453,14 +413,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/app/projects/controller/projects.client.controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5425">
-          <caret line="217" column="0" lean-forward="true" selection-start-line="217" selection-start-column="0" selection-end-line="217" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/www/app/search.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="125">
@@ -484,16 +436,6 @@
         <state relative-caret-position="2260">
           <caret line="134" column="9" lean-forward="false" selection-start-line="134" selection-start-column="9" selection-end-line="134" selection-end-column="9" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/app/projects/views/create-project-category.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="7" column="33" lean-forward="false" selection-start-line="7" selection-start-column="33" selection-end-line="7" selection-end-column="33" />
-          <folding>
-            <element signature="n#style#0;n#h4#0;n#ion-content#0;n#ion-view#0;n#!!top" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -538,30 +480,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/app/projects/views/view-project.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="7" column="34" lean-forward="true" selection-start-line="7" selection-start-column="34" selection-end-line="7" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/www/app/ideas/views/create-idea.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="73">
           <caret line="7" column="26" lean-forward="false" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
           <folding>
             <element signature="n#style#0;n#h3#0;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/app/projects/views/create-project.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="18" column="21" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding>
-            <element signature="n#style#0;n#h4#0;n#ion-content#0;n#ion-view#0;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -576,6 +500,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/www/app/ideas/views/view-idea.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/www/app/core/home.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -584,10 +516,63 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/app/ideas/views/view-idea.html">
+    <entry file="file://$PROJECT_DIR$/www/app/projects/views/create-project.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="3" column="8" lean-forward="false" selection-start-line="3" selection-start-column="8" selection-end-line="3" selection-end-column="8" />
+        <state relative-caret-position="250">
+          <caret line="28" column="11" lean-forward="true" selection-start-line="28" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/app/projects/controller/projects.client.controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="101" column="0" lean-forward="true" selection-start-line="101" selection-start-column="0" selection-end-line="101" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/app/projects/views/view-project.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="6" column="29" lean-forward="true" selection-start-line="6" selection-start-column="29" selection-end-line="6" selection-end-column="29" />
+          <folding>
+            <element signature="n#style#0;n#div#3;n#ion-content#0;n#ion-view#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#4;n#ion-content#0;n#ion-view#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/app/projects/views/create-project-category.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="7" column="33" lean-forward="false" selection-start-line="7" selection-start-column="33" selection-end-line="7" selection-end-column="33" />
+          <folding>
+            <element signature="n#style#0;n#h4#0;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ionic.config.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.io-config.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/app/ideas/controller/ideas.client.controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="30" column="35" lean-forward="true" selection-start-line="30" selection-start-column="35" selection-end-line="30" selection-end-column="35" />
           <folding />
         </state>
       </provider>

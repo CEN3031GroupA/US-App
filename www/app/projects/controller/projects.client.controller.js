@@ -99,7 +99,6 @@ angular.module('starter.projects', ['ionic','ngCordova','starter.config', 'user.
     .success(function(data) {
       $scope.project = data;
       $scope.QRProjectId = $scope.project._id;
-      console.log($scope.project.youtube);
 
       $http.get(config.api + '/user/' + currentUser._id)
         .success(function(user) {
@@ -195,6 +194,25 @@ angular.module('starter.projects', ['ionic','ngCordova','starter.config', 'user.
       }
     }
   };
+
+  $scope.addComment = function() {
+    var comment = this.comment;
+
+    if (comment.trim() === ''){
+      return;
+    }
+
+    this.comment = '';
+
+    $http.post(config.api + '/api/projects/' + $scope.project._id + '/addComment', comment)
+      .success(function(response) {
+        $scope.project = response.data;
+      })
+      .error(function() {
+        console.log("comment error");
+      });
+   };
+
 
   function shuffle(array) {
       var currentIndex = array.length, temporaryValue, randomIndex;

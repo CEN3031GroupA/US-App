@@ -23,14 +23,28 @@
       </button>
     </div>
 
-    <h3 class="project-team">Team members</h3>
+    <h3 class="project-team">Team Members</h3>
     <ul class="team-list">
       <li>
-        <i class="icon ion-person"></i> <span ng-bind="project.owner.firstName"></span> <span ng-bind="project.owner.lastName"></span> - <em>Owner</em>
+        <i class="icon ion-person"></i>{{project.owner.firstName}} {{project.owner.lastName}} - <em>Owner</em>
       </li>
       <li ng-repeat="member in project.team">
-        <i class="icon ion-person"></i> <span ng-bind="member.firstName"></span> <span ng-bind="member.lastName"></span> - <em>Member</em>
+        <i class="icon ion-person"></i> {{member.firstName}} {{member.lastName}} - <em>Member</em>
       </li>
     </ul>
+
+    <h3>Comments (<span ng-bind="project.comments.length"></span>)</h3>
+    <div class="clearfix" style="margin-bottom: 15px">
+      <label class="item item-input" show-errors>
+        <textarea name="comment" ng-model="comment" rows="5" class="form-control" placeholder="Please provide your feedback..." required></textarea>
+      </label>
+      <button class="button" ng-click="addComment()">Add Comment</button>
+    </div>
+    <div class="comments-list">
+      <div class="card item-text-wrap padding" style="background-color: gainsboro" ng-repeat="comment in project.comments">
+        <p>{{comment.content}}</p>
+        <p>Posted by {{comment.user.firstName}} {{comment.user.lastName}} on {{comment.posted | date: 'MM/dd/yyyy hh:mm a'}}</p>
+      </div>
+    </div>
   </ion-content>
 </ion-view>
