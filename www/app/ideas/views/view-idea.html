@@ -5,5 +5,36 @@
   <ion-content class="has-subheader padding" ng-controller="IdeasController" ng-init="findOne();">
     <h1>{{idea.title}}</h1>
     <p>{{idea.description.long}}</p>
+
+    <div >
+      <h3 class="idea-team">Interested</h3>
+      <ul class="team-list">
+        <li>
+          <i class="icon ion-person"></i> <span ng-bind="idea.owner.firstName"></span> <span ng-bind="idea.owner.lastName"></span> - <em>Owner</em>
+        </li>
+        <li ng-repeat="member in idea.team">
+          <i class="icon ion-person"></i> <span ng-bind="member.firstName"></span> <span ng-bind="member.lastName"></span> - <em>Member</em>
+        </li>
+      </ul>
+      <button ng-click="ideaToProject()" class="button button-bar">
+        Make This a Project
+      </button>
+
+      <h3>Comments (<span ng-bind="idea.comments.length"></span>)</h3>
+      <div class="clearfix" style="margin-bottom: 15px">
+        <label class="item item-input" show-errors>
+          <textarea name="comment" ng-model="comment" rows="5" class="form-control" placeholder="Please provide your feedback..." required></textarea>
+        </label>
+        <button class="button" style = "margin-top: 10px" ng-click="addComment()">Add Comment</button>
+      </div>
+
+      <div class="comments-list">
+        <div class="comment" ng-repeat="comment in idea.comments">
+          <h6>{{comment.user.firstName}} {{comment.user.lastName}}</h6>
+          <p>Posted on: {{comment.posted  | date: 'MM/dd/yyyy hh:mm a'}}</p>
+          <p>{{comment.content}}</p>
+        </div>
+      </div>
+    </div>
   </ion-content>
 </ion-view>

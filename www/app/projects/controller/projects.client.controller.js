@@ -1,5 +1,6 @@
 angular.module('starter.projects', ['ionic','ngCordova','starter.config', 'user.controllers', 'ja.qr'])
 
+// Allow access to youtube
 .config(function ($sceDelegateProvider) {
   $sceDelegateProvider.resourceUrlWhitelist([
     'self',                    // trust all resources from the same origin
@@ -8,15 +9,21 @@ angular.module('starter.projects', ['ionic','ngCordova','starter.config', 'user.
 })
 
 .controller('ProjectsController', function($scope, $http, $stateParams, $location, $rootScope, $window, $cordovaBarcodeScanner) {
-  var currentUser = JSON.parse($window.localStorage.getItem("currentUser"));
+  // Grab signed in user object
+  var user = JSON.parse($window.localStorage.getItem("currentUser"));
 
   if (!$rootScope.activeProject) {
     $rootScope.activeProject = {
       description: {},
-      owner: $scope.user,
+      owner: user,
       team: []
     };
   }
+
+  ActiveEvent.get().then(function(activeEvent) {
+    $scope.activeEvent = activeEvent;
+    $scope.activeCategory = $scope.activeEvent.categories[0];
+  });
 
   $scope.team = $rootScope.activeProject.team;
 
@@ -27,7 +34,7 @@ angular.module('starter.projects', ['ionic','ngCordova','starter.config', 'user.
     $rootScope.activeProject.description.short = this.short;
     $rootScope.activeProject.description.long = this.long;
 
-    $location.path('app/category');
+    $location.path('app/projects/category');
   };
 
 // Create Project: Set Category
@@ -38,12 +45,28 @@ angular.module('starter.projects', ['ionic','ngCordova','starter.config', 'user.
   // Create Project: Save Category
   $scope.saveProjectCategory = function () {
     $rootScope.activeProject.category = $scope.activeCategory.title;
+    var inputFields = sharedInputFields.set();
+    if (inputFields.length !== 0)
+    {
+      $rootScope.activeProject.title = inputFields[0];
+      $rootScope.activeProject.youtube = '';
+      $rootScope.activeProject.short = inputFields[1];
+      $rootScope.activeProject.long = inputFields[2];
+      $rootScope.activeProject.owner = $scope.user;
+      inputFields = [];
+      sharedInputFields.clear();
 
-    $location.path('app/team');
+      $location.path('app/projects/team');
+    }
+    $location.path('app/projects/team');
   };
 
   // Create new project
   $scope.create = function () {
+    $scope.error = null;
+
+    $rootScope.activeProject.event = $scope.activeEvent;
+
     var project = $rootScope.activeProject;
 
     $http.post(config.api + '/projects', project)
@@ -52,7 +75,7 @@ angular.module('starter.projects', ['ionic','ngCordova','starter.config', 'user.
         $rootScope.activeProject = null;
       })
       .error(function () {
-        console.log('data error');
+        $scope.error = 'create project error';
       })
   };
 
@@ -100,7 +123,7 @@ angular.module('starter.projects', ['ionic','ngCordova','starter.config', 'user.
       $scope.project = data;
       $scope.QRProjectId = $scope.project._id;
 
-      $http.get(config.api + '/user/' + currentUser._id)
+      $http.get(config.api + '/user/' + user._id)
         .success(function(user) {
           $scope.hasVoted = user.votedProjects.indexOf(data._id) !== -1;
         })
@@ -113,7 +136,7 @@ angular.module('starter.projects', ['ionic','ngCordova','starter.config', 'user.
     })
   };
 
-  /* Initialize voting field */
+  //Boolean sets voting button in single project view
   $scope.hasVoted = false;
 
   // Vote for a project
@@ -138,9 +161,10 @@ angular.module('starter.projects', ['ionic','ngCordova','starter.config', 'user.
       });
   };
 
+  // Scan to vote function, opens QR scanner
   $scope.scanBarcode = function () {
     $cordovaBarcodeScanner.scan().then(function (data) {
-      $scope.hasVoted = currentUser.votedProjects.indexOf(data.text) !== -1;
+      $scope.hasVoted = user.votedProjects.indexOf(data.text) !== -1;
       if(!$scope.hasVoted) {
         $http.put(config.api + '/projects/' + data.text + '/vote')
           .success(function() {
@@ -195,6 +219,7 @@ angular.module('starter.projects', ['ionic','ngCordova','starter.config', 'user.
     }
   };
 
+  // Add comment in single project view
   $scope.addComment = function() {
     var comment = this.comment;
 
@@ -202,18 +227,24 @@ angular.module('starter.projects', ['ionic','ngCordova','starter.config', 'user.
       return;
     }
 
+    var req = {
+      method: 'POST',
+      url: config.api + '/projects/' + $scope.project._id + '/addComment',
+      data: {
+        content: comment
+      }
+    };
+
     this.comment = '';
 
-    $http.post(config.api + '/api/projects/' + $scope.project._id + '/addComment', comment)
-      .success(function(response) {
-        $scope.project = response.data;
-      })
-      .error(function() {
-        console.log("comment error");
-      });
-   };
+    $http(req).then(function(response){
+      $scope.project = response.data;
+    }, function(err){
+      console.error(err);
+    });
+  };
 
-
+  // shuffles projects to random order
   function shuffle(array) {
       var currentIndex = array.length, temporaryValue, randomIndex;
 

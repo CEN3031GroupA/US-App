@@ -66,17 +66,8 @@ angular.module('starter.core', ['ionic', 'user.controllers'])
         }
       }
     })
-    .state('app.view-project', {
-      url: '/projects/:projectId',
-      views: {
-        'menuContent': {
-          templateUrl: 'app/projects/views/view-project.html',
-          controller: 'ProjectsController'
-        }
-      }
-    })
     .state('app.create-project', {
-      url: '/create',
+      url: '/projects/create',
       views: {
         'menuContent': {
           templateUrl: 'app/projects/views/create-project.html',
@@ -85,7 +76,7 @@ angular.module('starter.core', ['ionic', 'user.controllers'])
       }
     })
     .state('app.create-project-category', {
-      url: '/category',
+      url: '/projects/category',
       views: {
         'menuContent': {
           templateUrl: 'app/projects/views/create-project-category.html',
@@ -94,11 +85,20 @@ angular.module('starter.core', ['ionic', 'user.controllers'])
       }
     })
     .state('app.create-project-team', {
-      url: '/team',
+      url: '/projects/team',
       views: {
         'menuContent': {
           templateUrl: 'app/projects/views/create-project-team.html',
           controller: ''
+        }
+      }
+    })
+    .state('app.view-project', {
+      url: '/projects/:projectId',
+      views: {
+        'menuContent': {
+          templateUrl: 'app/projects/views/view-project.html',
+          controller: 'ProjectsController'
         }
       }
     })

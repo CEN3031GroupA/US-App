@@ -12,8 +12,10 @@
       </label>
     </div>
     <ion-list>
-      <ion-item ng-repeat="idea in ideas | filter: query" href="#/app/ideas/{{idea._id}}">
-        {{idea.title}}
+      <ion-item class="project-item item-button right" ng-repeat="idea in ideas | filter: query" href="#/app/ideas/{{idea._id}}">
+        <h2>{{idea.title}}</h2>
+        <p class="item-owner">by <span ng-bind="idea.owner.firstName"></span> <span ng-bind="idea.owner.lastName"></span></a><br></p>
+        <p>{{idea.description.short}}</p>
       </ion-item>
     </ion-list>
   </ion-content>

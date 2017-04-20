@@ -13,10 +13,15 @@
       </div>
       <div class="form-group" show-errors>
         <label class="item item-input" show-errors>
+          <textarea name="short-details" rows="2" class="form-control" ng-model="short" placeholder="Summary of idea" required></textarea>
+        </label>
+      </div>
+      <div class="form-group" show-errors>
+        <label class="item item-input" show-errors>
           <textarea name="details" rows="10" class="form-control" ng-model="details" placeholder="Describe your idea" required></textarea>
         </label>
       </div>
     </form>
-    <button type="submit" ng-click="create()">Submit</button>
+    <button type="submit" ng-click="create()">Publish Idea</button>
   </ion-content>
 </ion-view>
