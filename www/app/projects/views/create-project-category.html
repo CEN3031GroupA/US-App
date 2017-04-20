@@ -12,15 +12,15 @@
     <div>
       <form name="projectFormCategories" class="form-verical">
         <div class="form-group">
-          <section>
-            <div class="button-bar padding">
-              <a class="button button-small {{ activeCategory.id == category.id ? 'active' : '' }}"
-                 ng-click="setActiveCategory(category)" ng-repeat="category in categories">{{category.title}}</a>
-            </div>
-            <div class="category-description">
-              {{activeCategory.description}}
-            </div>
-          </section>
+          <div class="button" data-toggle="buttons">
+            <label class="{{ activeCategory._id == category._id ? 'active' : '' }}" ng-click="setActiveCategory(category)" ng-repeat="category in activeEvent.categories">
+              <input type="radio" name="options" id="option1" autocomplete="off" checked> {{category.title}}
+            </label>
+          </div>
+
+          <div class="category-description">
+            {{activeCategory.description}}
+          </div>
         </div>
       </form>
       <button type="submit" ng-click="saveProjectCategory()">Next ></button>
