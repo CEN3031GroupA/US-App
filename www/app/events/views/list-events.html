@@ -1,0 +1,25 @@
+<ion-view title="<img class='homelogo' src='img/Ultimate_Logo.png'/>">
+  <div class="bar bar-subheader item-input-inset subheader-bar">
+    <h4 class="title">48 Hours Hackathon</h4>
+  </div>
+  <ion-content class="has-subheader padding" ng-controller="EventsController" ng-init="find();">
+    <div>
+      <a ui-sref="app.create-event()" class="button button-block">Create New Event</a>
+    </div>
+
+    <div class="event" ng-repeat="event in events | orderBy: 'start'">
+      <h5>{{event.title}}</h5>
+      <div>{{event.description}}</div>
+      <div>Locations: {{event.locations}}</div>
+      <div>Categories:
+        <span ng-repeat="category in event.categories">{{category.title}}</span>
+      </div>
+      <div>Start: {{event.start | date: 'MM/dd/yyyy @ h:mm a Z'}}</div>
+      <div>End: {{event.end | date: 'MM/dd/yyyy @ h:mm a Z'}}</div>
+
+      <a class="button button-small" ui-sref="app.manage-event({eventId: event._id})">Manage</a>
+    </div>
+  </ion-content>
+</ion-view>
+
+
