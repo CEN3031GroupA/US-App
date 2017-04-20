@@ -1,4 +1,4 @@
-angular.module('starter.ideas', ['ionic', 'starter.config'])
+angular.module('starter.ideas', ['ionic', 'starter.config', 'starter.events'])
 
 .service('sharedInputFields', function() {
   return {
@@ -15,7 +15,7 @@ angular.module('starter.ideas', ['ionic', 'starter.config'])
   };
 })
 
-.controller('IdeasController', function ($scope, $http, $stateParams, $location, $rootScope, $window) {
+.controller('IdeasController', function ($scope, $http, $stateParams, $location, $rootScope, $window, ActiveEvent) {
   var user = JSON.parse($window.localStorage.getItem("currentUser"));
 
   if (!$rootScope.activeIdea) {
@@ -29,7 +29,6 @@ angular.module('starter.ideas', ['ionic', 'starter.config'])
   ActiveEvent.get().then(function(activeEvent) {
     $scope.activeEvent = activeEvent;
     $scope.activeCategory = $scope.activeEvent.categories[0];
-
   });
 
   $scope.team = $rootScope.activeIdea.team;

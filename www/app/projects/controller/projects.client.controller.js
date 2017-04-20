@@ -1,4 +1,4 @@
-angular.module('starter.projects', ['ionic','ngCordova','starter.config', 'user.controllers', 'ja.qr'])
+angular.module('starter.projects', ['ionic','ngCordova','starter.config', 'user.controllers', 'starter.events', 'ja.qr'])
 
 // Allow access to youtube
 .config(function ($sceDelegateProvider) {
@@ -8,7 +8,7 @@ angular.module('starter.projects', ['ionic','ngCordova','starter.config', 'user.
   ]);
 })
 
-.controller('ProjectsController', function($scope, $http, $stateParams, $location, $rootScope, $window, $cordovaBarcodeScanner) {
+.controller('ProjectsController', function($scope, $http, $stateParams, $location, $rootScope, $window, $cordovaBarcodeScanner, ActiveEvent) {
   // Grab signed in user object
   var user = JSON.parse($window.localStorage.getItem("currentUser"));
 

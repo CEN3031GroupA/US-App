@@ -112,6 +112,7 @@ angular.module('starter.core', ['ionic', 'user.controllers'])
         }
       }
     })
+    /* Admin Categories */
     .state('app.create-category', {
       url: '/admin/create-category',
       views: {
@@ -122,7 +123,7 @@ angular.module('starter.core', ['ionic', 'user.controllers'])
       }
     })
     .state('app.list-category', {
-      url: '/admin/list-category',
+      url: '/admin/categories',
       views: {
         'menuContent': {
           templateUrl: 'app/categories/views/list-category.html',
@@ -139,11 +140,49 @@ angular.module('starter.core', ['ionic', 'user.controllers'])
         }
       }
     })
+    /* Admin Vote View */
     .state('app.view-vote-results', {
       url: '/admin/vote-results',
       views: {
         'menuContent': {
           templateUrl: 'app/projects/views/view-vote-results.html',
+          controller: ''
+        }
+      }
+    })
+    /* Admin Events */
+    .state('app.list-events', {
+      url: '/admin/events',
+      views: {
+        'menuContent': {
+          templateUrl: 'app/events/views/list-events.html',
+          controller: ''
+        }
+      }
+    })
+    .state('app.create-event', {
+      url: '/admin/events/create',
+      views: {
+        'menuContent': {
+          templateUrl: 'app/events/views/create-event.html',
+          controller: ''
+        }
+      }
+    })
+    .state('app.edit-event', {
+      url: '/admin/events/edit',
+      views: {
+        'menuContent': {
+          templateUrl: 'app/events/views/edit-event.html',
+          controller: ''
+        }
+      }
+    })
+    .state('app.manage-event', {
+      url: '/admin/events/manage',
+      views: {
+        'menuContent': {
+          templateUrl: 'app/events/views/manage-events.html',
           controller: ''
         }
       }

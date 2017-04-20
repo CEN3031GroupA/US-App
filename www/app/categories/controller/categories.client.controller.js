@@ -17,7 +17,7 @@ angular.module('starter.category', ['ionic', 'starter.config'])
 
       $http.post(config.api + '/admin/eventCategories', eventCategory)
         .success(function () {
-          $location.path('app/admin/eventCategories');
+          $location.path('app/admin/categories');
           $scope.title = '';
         })
         .error(function () {
