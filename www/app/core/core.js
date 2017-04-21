@@ -236,5 +236,47 @@ angular.module('starter.core', ['ionic', 'user.controllers'])
           templateUrl: 'app/events/views/manage-events.html',
         }
       }
-    });
+    })
+    /* Subevents */
+    .state('app.schedule', {
+      url: '/schedule',
+      views: {
+        'menuContent': {
+          templateUrl: 'app/subevents/views/schedule.html',
+        }
+      }
+    })
+    .state('app.create-subevent', {
+      url: '/admin/events/:eventId/subevents/create',
+      views: {
+        'menuContent': {
+          templateUrl: 'app/subevents/views/create-subevent.html',
+        }
+      }
+    })
+    .state('app.edit-subevent', {
+      url: '/admin/events/:eventId/subevents/:subeventId/edit',
+      views: {
+        'menuContent': {
+          templateUrl: 'app/subevents/views/edit-subevent.html',
+        }
+      }
+    })
+    .state('app.list-subevents', {
+      url: '/admin/events/:eventId/subevents',
+      views: {
+        'menuContent': {
+          templateUrl: 'app/subevents/views/list-subevents.html',
+        }
+      }
+    })
+    .state('app.view-subevent', {
+      url: '/admin/events/:eventId/subevents/:subeventId',
+      views: {
+        'menuContent': {
+          templateUrl: 'app/subevents/views/view-subevent.html',
+        }
+      }
+    })
+
 });

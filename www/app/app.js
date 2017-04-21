@@ -13,7 +13,8 @@ angular.module('starter',
   'starter.category',
   'starter.events',
   'starter.faqs',
-  'starter.articles'
+  'starter.articles',
+  'starter.subevents'
 ])
 
 .run(function($ionicPlatform) {

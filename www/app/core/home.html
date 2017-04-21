@@ -1,5 +1,14 @@
 <ion-view>
-  <ion-content class="has-subheader" ng-controller="ProjectsController">
+  <ion-content class="has-subheader" ng-controller="SubEventsController" ng-init="init();">
+    <ion-item ng-if="activeEvent">
+      <h2 style="text-align: center"><strong><span ng-bind="activeEvent.title"></span>
+        <span ng-if="activeEvent.inProgress"> in progress</span>
+        <span ng-if="!activeEvent.inProgress"> upcoming</span>
+      </strong>
+      </h2>
+      <h3 style="text-align: center" ng-if="activeEvent.inProgress"><span ng-bind="activeEvent.timer"></span> hrs remaining</h3>
+      <h3 style="text-align: center" ng-if="!activeEvent.inProgress"><span ng-bind="activeEvent.timer"></span> till event</h3>
+    </ion-item>
     <div class="padding">
       <div class="item home-card" ui-sref="app.create-project">
         <h2>Submit a project</h2>

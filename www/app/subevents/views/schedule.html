@@ -1,0 +1,21 @@
+<ion-view>
+  <ion-content class="has-subheader padding" ng-controller="SubEventsController" ng-init="find()">
+    <h3 style="text-align: center"><span ng-bind="event.title"></span>Schedule</h3>
+    <div style="text-align: center">
+      <h4 ng-if="activeEvent.inProgress"><span ng-bind="activeEvent.timer"></span> hrs remaining</h4>
+      <h4 ng-if="!activeEvent.inProgress"><span ng-bind="activeEvent.timer"></span> till event</h4>
+    </div>
+    <hr>
+
+    <ion-list>
+      <ion-item class="item-icon-right" ng-repeat="subevent in subevents | orderBy: 'start'" ui-sref="app.view-subevent({subeventId: subevent._id})">
+        <h2>{{subevent.title}}</h2>
+        <p>{{subevent.datetime | date: 'MM/dd/yyyy'}}</p>
+        <p>{{subevent.datetime | date: 'hh:mm a'}}</p>
+        <p>{{subevent.location}}</p>
+        <i class="icon ion-pin"></i>
+      </ion-item>
+    </ion-list>
+
+  </ion-content>
+</ion-view>
