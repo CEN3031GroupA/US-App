@@ -1,16 +1,23 @@
 <ion-side-menus enable-menu-with-back-views="true">
   <ion-side-menu-content>
     <ion-nav-bar class="header-bar">
-
       <ion-nav-buttons side="left">
         <button id="navicon" class="button button-icon button-clear ion-navicon" menu-toggle="left">
         </button>
       </ion-nav-buttons>
+      <ion-nav-title>
+        <img class='homelogo' src='img/Ultimate_Logo.png'/>
+      </ion-nav-title>
     </ion-nav-bar>
-    <ion-nav-view name="menuContent"></ion-nav-view>
+
+    <ion-nav-view name="menuContent">
+      <div class="bar bar-subheader item-input-inset subheader-bar">
+        <h4 class="title">48 Hours Hackathon</h4>
+      </div>
+    </ion-nav-view>
   </ion-side-menu-content>
 
-  <ion-side-menu side="left" ng-controller="CoreCtrl">
+  <ion-side-menu side="left">
     <ion-header-bar class="menu-bar">
       <h1 class="title">Menu</h1>
     </ion-header-bar>

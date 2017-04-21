@@ -1,9 +1,5 @@
 angular.module('starter.core', ['ionic', 'user.controllers'])
 
-.controller('CoreCtrl', function($scope, $window) {
-  $scope.user = JSON.parse($window.localStorage.getItem("currentUser"));
-})
-
 .config(function($stateProvider, $urlRouterProvider) {
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/app/login');
@@ -11,7 +7,8 @@ angular.module('starter.core', ['ionic', 'user.controllers'])
     .state('app', {
       url: '/app',
       abstract: true,
-      templateUrl: 'app/core/menu.html'
+      templateUrl: 'app/core/menu.html',
+      controller: 'UserCtrl'
     })
     .state('app.login', {
       url: '/login',
@@ -43,7 +40,6 @@ angular.module('starter.core', ['ionic', 'user.controllers'])
       views: {
         'menuContent': {
           templateUrl: 'app/ideas/views/create-idea.html',
-          controller: ''
         }
       }
     })
@@ -78,7 +74,6 @@ angular.module('starter.core', ['ionic', 'user.controllers'])
       views: {
         'menuContent': {
           templateUrl: 'app/projects/views/create-project.html',
-          controller: ''
         }
       }
     })
@@ -87,7 +82,6 @@ angular.module('starter.core', ['ionic', 'user.controllers'])
       views: {
         'menuContent': {
           templateUrl: 'app/projects/views/create-project-category.html',
-          controller: ''
         }
       }
     })
@@ -96,7 +90,6 @@ angular.module('starter.core', ['ionic', 'user.controllers'])
       views: {
         'menuContent': {
           templateUrl: 'app/projects/views/create-project-team.html',
-          controller: ''
         }
       }
     })
@@ -123,7 +116,7 @@ angular.module('starter.core', ['ionic', 'user.controllers'])
       url: '/articles/create',
       views: {
         'menuContent': {
-          templateUrl: 'app/projects/views/create-article.html'
+          templateUrl: 'app/articles/views/create-article.html'
         }
       }
     })
@@ -131,7 +124,7 @@ angular.module('starter.core', ['ionic', 'user.controllers'])
       url: '/articles',
       views: {
         'menuContent': {
-          templateUrl: 'app/projects/views/list-articles.html'
+          templateUrl: 'app/articles/views/list-articles.html'
         }
       }
     })
@@ -139,7 +132,7 @@ angular.module('starter.core', ['ionic', 'user.controllers'])
       url: '/articles/:articleId',
       views: {
         'menuContent': {
-          templateUrl: 'app/projects/views/view-article.html'
+          templateUrl: 'app/articles/views/view-article.html'
         }
       }
     })
@@ -147,7 +140,7 @@ angular.module('starter.core', ['ionic', 'user.controllers'])
       url: '/articles/:articleId/edit',
       views: {
         'menuContent': {
-          templateUrl: 'app/projects/views/edit-article.html'
+          templateUrl: 'app/articles/views/edit-article.html'
         }
       }
     })
@@ -156,7 +149,7 @@ angular.module('starter.core', ['ionic', 'user.controllers'])
       url: '/faqs',
       views: {
         'menuContent': {
-          templateUrl: 'app/projects/views/list-faqs.html'
+          templateUrl: 'app/faqs/views/list-faqs.html'
         }
       }
     })
@@ -164,7 +157,7 @@ angular.module('starter.core', ['ionic', 'user.controllers'])
       url: '/faqs/:faqId',
       views: {
         'menuContent': {
-          templateUrl: 'app/projects/views/respond-faq.html'
+          templateUrl: 'app/faqs/views/respond-faq.html'
         }
       }
     })
@@ -174,7 +167,6 @@ angular.module('starter.core', ['ionic', 'user.controllers'])
       views: {
         'menuContent': {
           templateUrl: 'app/users/views/admin/admin-home.html',
-          controller: ''
         }
       }
     })
@@ -184,7 +176,6 @@ angular.module('starter.core', ['ionic', 'user.controllers'])
       views: {
         'menuContent': {
           templateUrl: 'app/categories/views/create-category.html',
-          controller: ''
         }
       }
     })
@@ -193,7 +184,6 @@ angular.module('starter.core', ['ionic', 'user.controllers'])
       views: {
         'menuContent': {
           templateUrl: 'app/categories/views/list-category.html',
-          controller: ''
         }
       }
     })
@@ -202,7 +192,6 @@ angular.module('starter.core', ['ionic', 'user.controllers'])
       views: {
         'menuContent': {
           templateUrl: 'app/categories/views/edit-category.html',
-          controller: ''
         }
       }
     })
@@ -212,7 +201,6 @@ angular.module('starter.core', ['ionic', 'user.controllers'])
       views: {
         'menuContent': {
           templateUrl: 'app/projects/views/view-vote-results.html',
-          controller: ''
         }
       }
     })
@@ -222,7 +210,6 @@ angular.module('starter.core', ['ionic', 'user.controllers'])
       views: {
         'menuContent': {
           templateUrl: 'app/events/views/list-events.html',
-          controller: ''
         }
       }
     })
@@ -231,7 +218,6 @@ angular.module('starter.core', ['ionic', 'user.controllers'])
       views: {
         'menuContent': {
           templateUrl: 'app/events/views/create-event.html',
-          controller: ''
         }
       }
     })
@@ -240,7 +226,6 @@ angular.module('starter.core', ['ionic', 'user.controllers'])
       views: {
         'menuContent': {
           templateUrl: 'app/events/views/edit-event.html',
-          controller: ''
         }
       }
     })
@@ -249,7 +234,6 @@ angular.module('starter.core', ['ionic', 'user.controllers'])
       views: {
         'menuContent': {
           templateUrl: 'app/events/views/manage-events.html',
-          controller: ''
         }
       }
     });
