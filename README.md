@@ -17,19 +17,26 @@
   - Vote Results
 - QR Barcode Scanner
 
-# Views not completed:
+# Not completed:
 - Events
-  - create-event
-  - edit-event
-  - manage-events
+  - create-event.html
+  - edit-event.html
+  - manage-events.html
 
 - Subevents
-  - create-subevent
-  - edit-subevent
-  - list-subevents
+  - create-subevent.html
+  - edit-subevent.html
+  - list-subevents.html
 
 - Articles
-  - list-articles
+  - list-articles.html
+
+- Projects
+  - popover in nav-bar for edit and delete options
+
+# Bugs
+- Data objects need to be updated/refreshed between views to keep latest changes. Data is not persistent between web application and mobile.
+- User not showing on comments and faqs
 
 # Notable Folders
 - core: home, menu

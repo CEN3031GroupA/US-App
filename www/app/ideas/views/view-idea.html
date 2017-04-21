@@ -32,10 +32,9 @@
       </div>
 
       <div class="comments-list">
-        <div class="comment" ng-repeat="comment in idea.comments">
-          <h6>{{comment.user.firstName}} {{comment.user.lastName}}</h6>
-          <p>Posted on: {{comment.posted  | date: 'MM/dd/yyyy hh:mm a'}}</p>
+        <div class="card item-text-wrap padding" style="background-color: gainsboro" ng-repeat="comment in idea.comments">
           <p>{{comment.content}}</p>
+          <p>Posted by {{comment.user.firstName}} {{comment.user.lastName}} on {{comment.posted  | date: 'MM/dd/yyyy hh:mm a'}}</p>
         </div>
       </div>
     </div>
