@@ -8,10 +8,10 @@ angular.module('user.controllers', [])
   // listen for the $ionicView.enter event:
   //$scope.$on('$ionicView.enter', function(e) {
   //});
-  var currentUser = JSON.parse($window.localStorage.getItem("currentUser"));
+  var user = JSON.parse($window.localStorage.getItem("currentUser"));
 
   // If user is signed in then redirect back home
-  if (currentUser) {
+  if (user) {
     $location.path('app/home');
   }
 

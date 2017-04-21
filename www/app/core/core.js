@@ -11,8 +11,7 @@ angular.module('starter.core', ['ionic', 'user.controllers'])
     .state('app', {
       url: '/app',
       abstract: true,
-      templateUrl: 'app/core/menu.html',
-      controller: 'UserCtrl'
+      templateUrl: 'app/core/menu.html'
     })
     .state('app.login', {
       url: '/login',

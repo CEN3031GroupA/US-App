@@ -19,14 +19,20 @@
         <ion-item menu-close href="#/app/home">
           Home
         </ion-item>
-        <ion-item menu-close href="#/app/admin" ng-show="{{user.isAdmin}}">
+        <ion-item menu-close href="#/app/admin" ng-show="user.isAdmin">
           Admin
+        </ion-item>
+        <ion-item menu-close>
+          Schedule
         </ion-item>
         <ion-item menu-close href="#/app/projects">
           Projects
         </ion-item>
         <ion-item menu-close href="#/app/ideas">
           Ideas
+        </ion-item>
+        <ion-item menu-close>
+          FAQs
         </ion-item>
         <ion-item menu-close ng-click="logout()">
           Logout
