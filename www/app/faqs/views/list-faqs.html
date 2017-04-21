@@ -1,0 +1,34 @@
+<ion-view>
+  <ion-content class="has-subheader padding" ng-controller="FaqCtrl" ng-init="find();">
+    <div class="page-header">
+      <div>
+        <h3 style="text-align: center">Frequently Asked Questions</h3>
+        <div class="row" style="padding-bottom: 10px;">
+          <button data-toggle="collapse" class="button button-block" ng-click="askme=!askme">Ask a question</button>
+          <h2 ng-bind="faq.question"></h2>
+        </div>
+        <div ng-show="askme">
+          <form name="faqForm" class="form-vertical">
+            <fieldset>
+              <div class="form-group" show-errors>
+                <label class="item item-input">
+                  <input type="text" name="question" class="form-control" ng-model="question" placeholder="post a question here" required>
+                </label>
+                <div ng-messages="faqForm.question.$error" role="alert">
+                  <p class="help-block error-text" ng-message="required">Question is required</p>
+                </div>
+              </div>
+              <input type="submit" color="PMS 362c" class="button" ng-click="post()" placeholder="Ask" />
+            </fieldset>
+          </form>
+        </div>
+      </div>
+    </div>
+    <hr>
+    <ion-list>
+      <ion-item ng-repeat="faq in faqs" ui-sref="app.respond-faq({faqId: faq._id})">
+        <p ng-click="showme=!showme"> {{faq.question}} </p>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

@@ -11,7 +11,9 @@ angular.module('starter',
   'starter.ideas',
   'starter.projects',
   'starter.category',
-  'starter.events'
+  'starter.events',
+  'starter.faqs',
+  'starter.articles'
 ])
 
 .run(function($ionicPlatform) {

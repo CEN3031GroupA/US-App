@@ -1,6 +1,8 @@
 angular.module('starter.faqs', ['ionic'])
 
-.controller('FaqCtrl', function ($scope, $http, $stateParams, $location) {
+.controller('FaqCtrl', function ($scope, $http, $stateParams, $location, $window) {
+  var user = JSON.parse($window.localStorage.getItem("currentUser"));
+
   // Get all FAQs
   $scope.find = function () {
     $http.get(config.api + '/faqs')
@@ -46,7 +48,7 @@ angular.module('starter.faqs', ['ionic'])
     });
   };
 
-  $scope.post = function (isValid) {
+  $scope.post = function () {
     $scope.error = null;
 
     var faq = {
@@ -80,6 +82,7 @@ angular.module('starter.faqs', ['ionic'])
         $scope.faq.answers[i].isSolution = false;
       }
     }
+
     var index = $scope.faq.answers.indexOf(answer);
     $scope.faq.answers[index].isSolution = true;
 
@@ -87,7 +90,7 @@ angular.module('starter.faqs', ['ionic'])
       method: 'PUT',
       url: config.api + '/faqs/' + $scope.faq._id,
       data: {
-        answer: $scope.faq.answers
+        answers: $scope.faq.answers
       }
     };
 

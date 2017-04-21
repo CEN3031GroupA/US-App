@@ -1,0 +1,35 @@
+<ion-view>
+  <ion-content class="has-subheader padding" ng-controller="FaqCtrl" ng-init="findOne();">
+    <h3 style="text-align:center">
+      {{faq.question}}
+    </h3>
+    <div>
+      <ion-list>
+        <ion-item ng-repeat="solution in faq.answers | filter: {isSolution:true}">
+          <h2><strong>{{solution.answer}}</strong></h2>
+          <p>Solution Posted by {{solution.user.firstName}} {{solution.user.lastName}}</p>
+          <p>{{solution.date | date: 'MM/dd/yyyy hh:mm a'}}</p>
+        </ion-item>
+      </ion-list>
+    </div>
+    <hr>
+    <div>
+      <ion-list>
+        <ion-item class="project-item item-icon right" ng-repeat="answer in faq.answers| filter: {isSolution:false}">
+          <div class="item-button-right">
+            {{answer.answer}}
+            <button ng-model="isSolution" ng-value="true" class="button" name="isSolution" type="Boolean" ng-click="markBestSolution(answer)">
+              <i class="icon ion-checkmark-circled"></i>
+            </button>
+          </div>
+          <p>Posted by {{answer.user.firstName}} {{answer.user.lastName}} </p>
+          <p>{{answer.date | date: 'MM/dd/yyyy hh:mm a'}}</p>
+        </ion-item>
+      </ion-list>
+      <label class="item item-input">
+        <textarea name="answer" ng-model="answer" class="form-control" placeholder="Add your answer here!" required></textarea>
+      </label>
+      <button class="button" ng-click="addAnswer()">Post Answer</button>
+    </div>
+  </ion-content>
+</ion-view>
