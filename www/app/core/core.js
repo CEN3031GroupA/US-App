@@ -38,6 +38,15 @@ angular.module('starter.core', ['ionic', 'user.controllers'])
         }
       }
     })
+    .state('app.create-idea', {
+      url: '/create-idea',
+      views: {
+        'menuContent': {
+          templateUrl: 'app/ideas/views/create-idea.html',
+          controller: ''
+        }
+      }
+    })
     .state('app.view-idea', {
       url: '/ideas/:ideaId',
       views: {
@@ -46,12 +55,11 @@ angular.module('starter.core', ['ionic', 'user.controllers'])
         }
       }
     })
-    .state('app.create-idea', {
-      url: '/create-idea',
+    .state('app.edit-idea', {
+      url: '/ideas/:ideaId/edit',
       views: {
         'menuContent': {
-          templateUrl: 'app/ideas/views/create-idea.html',
-          controller: ''
+          templateUrl: 'app/ideas/views/edit-idea.html'
         }
       }
     })
@@ -98,6 +106,65 @@ angular.module('starter.core', ['ionic', 'user.controllers'])
         'menuContent': {
           templateUrl: 'app/projects/views/view-project.html',
           controller: 'ProjectsController'
+        }
+      }
+    })
+    .state('app.edit-project', {
+      url: '/projects/:projectId/edit',
+      views: {
+        'menuContent': {
+          templateUrl: 'app/projects/views/edit-project.html',
+          controller: 'ProjectsController'
+        }
+      }
+    })
+    /* Articles */
+    .state('app.create-article', {
+      url: '/articles/create',
+      views: {
+        'menuContent': {
+          templateUrl: 'app/projects/views/create-article.html'
+        }
+      }
+    })
+    .state('app.list-articles', {
+      url: '/articles',
+      views: {
+        'menuContent': {
+          templateUrl: 'app/projects/views/list-articles.html'
+        }
+      }
+    })
+    .state('app.view-article', {
+      url: '/articles/:articleId',
+      views: {
+        'menuContent': {
+          templateUrl: 'app/projects/views/view-article.html'
+        }
+      }
+    })
+    .state('app.edit-article', {
+      url: '/articles/:articleId/edit',
+      views: {
+        'menuContent': {
+          templateUrl: 'app/projects/views/edit-article.html'
+        }
+      }
+    })
+    /* FAQS */
+    .state('app.list-faqs', {
+      url: '/faqs',
+      views: {
+        'menuContent': {
+          templateUrl: 'app/projects/views/list-faqs.html'
+        }
+      }
+    })
+    .state('app.respond-faq', {
+      url: '/faqs/:faqId',
+      views: {
+        'menuContent': {
+          templateUrl: 'app/projects/views/respond-faq.html'
         }
       }
     })
