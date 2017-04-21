@@ -15,7 +15,7 @@ angular.module('starter.ideas', ['ionic', 'starter.config', 'starter.events'])
   };
 })
 
-.controller('IdeasController', function ($scope, $http, $stateParams, $location, $rootScope, $window, ActiveEvent) {
+.controller('IdeasController', function (sharedInputFields, $scope, $http, $stateParams, $location, $rootScope, $window, ActiveEvent) {
   var user = JSON.parse($window.localStorage.getItem("currentUser"));
 
   if (!$rootScope.activeIdea) {
@@ -61,7 +61,6 @@ angular.module('starter.ideas', ['ionic', 'starter.config', 'starter.events'])
     sharedInputFields.add($scope.idea.long);
     $scope.remove($scope.idea);
 
-
     $location.path('app/projects/category');
   };
 
@@ -70,7 +69,6 @@ angular.module('starter.ideas', ['ionic', 'starter.config', 'starter.events'])
     $http.delete(config.api + '/ideas/' + idea._id)
       .success(function () {
         $location.path('app/ideas/');
-        alert('idea deleted!');
       })
       .error(function () {
         console.log('data error');
@@ -78,8 +76,9 @@ angular.module('starter.ideas', ['ionic', 'starter.config', 'starter.events'])
   };
 
   $scope.update = function (idea) {
-    $http.put(config.api + '/ideas/' + idea._id)
-      .success(function() {
+    $http.put(config.api + '/ideas/' + idea._id, idea)
+      .success(function(data) {
+        $scope.idea = data;
         $location.path('app/ideas/' + idea._id);
       })
       .error(function () {

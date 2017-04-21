@@ -8,7 +8,7 @@ angular.module('starter.projects', ['ionic','ngCordova','starter.config', 'user.
   ]);
 })
 
-.controller('ProjectsController', function(sharedInputFields, $scope, $http, $stateParams, $location, $rootScope, $window, $cordovaBarcodeScanner, ActiveEvent) {
+.controller('ProjectsController', function(sharedInputFields, $scope, $http, $stateParams, $location, $rootScope, $window, $cordovaBarcodeScanner, ActiveEvent, $ionicPopover) {
   // Grab signed in user object
   var user = JSON.parse($window.localStorage.getItem("currentUser"));
 
@@ -93,8 +93,9 @@ angular.module('starter.projects', ['ionic','ngCordova','starter.config', 'user.
 
   // Update existing project
   $scope.update = function (project) {
-    $http.put(config.api + '/projects/' + project._id)
-      .success(function() {
+    $http.put(config.api + '/projects/' + project._id, project)
+      .success(function(data) {
+        $scope.project = data;
         $location.path('app/projects/' + project._id);
       })
       .error(function () {
@@ -243,6 +244,7 @@ angular.module('starter.projects', ['ionic','ngCordova','starter.config', 'user.
       console.error(err);
     });
   };
+
 
   // shuffles projects to random order
   function shuffle(array) {

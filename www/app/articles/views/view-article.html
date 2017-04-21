@@ -1,0 +1,19 @@
+<ion-view>
+  <ion-content class="has-subheader padding" ng-controller="ArticleCtrl" ng-init="findOne();">
+    <button ui-sref="app.edit-article({articleId: article._id})">
+      <span class="icon ion-edit"></span>
+    </button>
+    <button ng-click="remove(article)">
+      <span class="icon ion-trash-a"></span>
+    </button>
+    <h1>{{article.title}}</h1>
+    <small>
+      <em class="text-muted">
+        Posted on
+        <span ng-bind="article.created | date:'mediumDate'"></span>
+        by
+        <span ng-bind="article.user.displayName"></span>
+      </em>
+    </small>
+    <p class="lead" ng-bind="article.content"></p>  </ion-content>
+</ion-view>

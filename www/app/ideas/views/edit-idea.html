@@ -1,0 +1,24 @@
+<ion-view>
+  <ion-content class="has-subheader padding" ng-controller="IdeasController" ng-init="findOne();">
+    <h3 style="text-align: center;">Edit Idea</h3>
+    <hr>
+    <form name="ideaForm">
+      <div class="form-group" show-errors>
+        <label class="item item-input" show-errors>
+          <input type="text" name="title" class="form-control" ng-model="idea.title" placeholder="title" required>
+        </label>
+      </div>
+      <div class="form-group" show-errors>
+        <label class="item item-input" show-errors>
+          <textarea name="short-details" rows="2" class="form-control" ng-model="idea.description.short" placeholder="Summary of idea" required></textarea>
+        </label>
+      </div>
+      <div class="form-group" show-errors>
+        <label class="item item-input" show-errors>
+          <textarea name="details" rows="10" class="form-control" ng-model="idea.description.long" placeholder="Describe your idea" required></textarea>
+        </label>
+      </div>
+    </form>
+    <button type="submit" ng-click="update(idea)">Update Idea</button>
+  </ion-content>
+</ion-view>

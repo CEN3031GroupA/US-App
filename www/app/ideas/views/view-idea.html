@@ -1,5 +1,11 @@
 <ion-view>
   <ion-content class="has-subheader padding" ng-controller="IdeasController" ng-init="findOne();">
+    <button ui-sref="app.edit-idea({ideaId: idea._id})">
+      <span class="icon ion-edit"></span>
+    </button>
+    <button ng-click="remove(idea)">
+      <span class="icon ion-trash-a"></span>
+    </button>
     <h1>{{idea.title}}</h1>
     <p>{{idea.description.long}}</p>
 

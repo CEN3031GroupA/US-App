@@ -1,0 +1,51 @@
+<ion-view>
+  <ion-content class="has-subheader padding" ng-controller="ProjectsController" ng-init="findOne();">
+    <h3 style="text-align: center">Edit Project</h3>
+    <hr>
+
+    <form name="projectForm">
+
+      <div class="form-group" show-errors>
+        <div ng-messages="projectForm.title.$error" role="alert">
+          <p class="help-block error-text" ng-message="required">Title *</p>
+        </div>
+        <label class="item item-input" show-errors>
+          <input type="text" ng-model="project.title" name="title" class="form-control" required title="title">
+        </label>
+      </div>
+      <br>
+
+      <div>
+        <div>
+          <p>Embedded YouTube URL</p>
+        </div>
+        <label class="item item-input" show-errors>
+          <input type="url" ng-model="project.youtube" class="form-control" title="url">
+        </label>
+      </div>
+      <br>
+
+      <div class="form-group" show-errors>
+        <div ng-messages="projectForm.details.$error" role="alert">
+          <p class="help-block error-text" ng-message="required">Short Description of Project *</p>
+        </div>
+        <label class="item item-input">
+           <textarea rows="2" type="text" ng-model="project.description.short" class="form-control" required title="description"></textarea>
+        </label>
+      </div>
+      <br>
+
+      <div class="form-group" show-errors>
+        <div ng-messages="projectForm.details.$error" role="alert">
+          <p class="help-block error-text" ng-message="required">Detailed Description of Project *</p>
+        </div>
+        <label class="item item-input">
+          <textarea name="long" rows="5" ng-model="project.description.long" srequired></textarea>
+        </label>
+      </div>
+      <br>
+
+      <button type="submit" ng-click="update(project)">Update Project</button>
+    </form>
+  </ion-content>
+</ion-view>

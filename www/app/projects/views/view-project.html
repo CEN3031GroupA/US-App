@@ -1,5 +1,16 @@
 <ion-view>
+  <ion-nav-buttons side="right">
+    <button class="button button-icon ion-more" style="color:white;">
+    </button>
+  </ion-nav-buttons>
+
   <ion-content class="has-subheader padding" ng-controller="ProjectsController" ng-init="findOne();">
+    <button ui-sref="app.edit-project({projectId: project._id})">
+      <span class="icon ion-edit"></span>
+    </button>
+    <button ng-click="remove(project)">
+      <span class="icon ion-trash-a"></span>
+    </button>
     <div class="row">
       <div class="col col-8">
         <h1>{{project.title}}</h1>
@@ -45,3 +56,8 @@
     </div>
   </ion-content>
 </ion-view>
+
+
+
+
+

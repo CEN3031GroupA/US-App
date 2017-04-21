@@ -1,31 +1,41 @@
 <ion-view>
-  <ion-content class="has-subheader" ng-controller="SubEventsController" ng-init="init();">
-    <ion-item ng-if="activeEvent">
-      <h2 style="text-align: center"><strong><span ng-bind="activeEvent.title"></span>
-        <span ng-if="activeEvent.inProgress"> in progress</span>
-        <span ng-if="!activeEvent.inProgress"> upcoming</span>
-      </strong>
-      </h2>
-      <h3 style="text-align: center" ng-if="activeEvent.inProgress"><span ng-bind="activeEvent.timer"></span> hrs remaining</h3>
-      <h3 style="text-align: center" ng-if="!activeEvent.inProgress"><span ng-bind="activeEvent.timer"></span> till event</h3>
-    </ion-item>
-    <div class="padding">
-      <div class="item home-card" ui-sref="app.create-project">
-        <h2>Submit a project</h2>
-        <p>Have a solid idea? Submit your project now!</p>
+  <ion-content class="has-subheader">
+    <section ng-controller="SubEventsController" ng-init="init();">
+      <ion-item ng-if="activeEvent">
+        <h2 style="text-align: center"><strong><span ng-bind="activeEvent.title"></span>
+          <span ng-if="activeEvent.inProgress"> in progress</span>
+          <span ng-if="!activeEvent.inProgress"> upcoming</span>
+        </strong>
+        </h2>
+        <h3 style="text-align: center" ng-if="activeEvent.inProgress"><span ng-bind="activeEvent.timer"></span> hrs remaining</h3>
+        <h3 style="text-align: center" ng-if="!activeEvent.inProgress"><span ng-bind="activeEvent.timer"></span> till event</h3>
+      </ion-item>
+      <div class="padding">
+        <div class="item home-card" ui-sref="app.create-project">
+          <h2>Submit a project</h2>
+          <p>Have a solid idea? Submit your project now!</p>
+        </div>
       </div>
-    </div>
-    <div class="padding-horizontal">
-      <div class="item home-card" ui-sref="app.create-idea">
-        <h2>Submit a new idea</h2>
-        <p>Don't be shy!</p>
+      <div class="padding-horizontal">
+        <div class="item home-card" ui-sref="app.create-idea">
+          <h2>Submit a new idea</h2>
+          <p>Don't be shy!</p>
+        </div>
       </div>
-    </div>
-    <div class="padding-horizontal padding-top">
-      <div class="item home-card" ng-click="scanBarcode()">
-        <h2>QR Scanner</h2>
-        <p>Scan to Vote!</p>
+      <div class="padding-horizontal padding-top">
+        <div class="item home-card" ng-click="scanBarcode()">
+          <h2>QR Scanner</h2>
+          <p>Scan to Vote!</p>
+        </div>
       </div>
-    </div>
+    </section>
+    <section ng-controller="ArticleCtrl" ng-init="find();">
+      <ion-list class="padding">
+        <ion-item ng-repeat="article in articles" href="#/app/articles/{{article._id}}">
+          <h3>{{article.title}}</h3>
+          <p>{{article.content}}</p>
+        </ion-item>
+      </ion-list>
+    </section>
   </ion-content>
 </ion-view>
