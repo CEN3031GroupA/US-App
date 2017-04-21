@@ -17,21 +17,21 @@
   - Vote Results
 - QR Barcode Scanner
 
-## Views not completed:
-# Events
-- create-event
-- edit-event
-- manage-events
+# Views not completed:
+- Events
+  - create-event
+  - edit-event
+  - manage-events
 
-# Subevents
-- create-subevent
-- edit-subevent
-- list-subevents
+- Subevents
+  - create-subevent
+  - edit-subevent
+  - list-subevents
 
-# Articles
-- list-articles
+- Articles
+  - list-articles
 
-# Folders
+# Notable Folders
 - core: home, menu
 - config: heroku site
 
