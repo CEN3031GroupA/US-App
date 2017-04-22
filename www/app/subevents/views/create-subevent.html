@@ -1,0 +1,41 @@
+<ion-view>
+  <ion-content class="has-subheader padding">
+    <section ng-controller="SubEventsController">
+      <h3 style="text-align: center">Create New Sub Event</h3>
+      <hr>
+
+      <form ng-submit="create()">
+        <div class="form-group">
+          Title
+          <label class="item item-input" for="title">
+           <input name="title" type="text" ng-model="title" id="title" class="form-control">
+          </label>
+        </div>
+        <div class="form-group">
+          <label for="description">Description</label>
+          <!-- FIXME Add TextAngular
+           <text-angular id="description" ng-model="description"></text-angular>
+           -->
+        </div>
+        <div class="form-group">
+          Location
+          <label class="item item-input" for="location">
+            <input name="location" type="text" ng-model="location" id="location" class="form-control">
+          </label>
+        </div>
+        <div class="form-group">
+          <label>Date/Time</label> <br />
+          <!-- FIXME Add datetimepicker
+          <datetimepicker ng-model="datetime"
+                          date-format="dd-MMM-yyyy">
+          </datetimepicker>
+          -->
+        </div>
+
+        <div class="form-group">
+          <input type="submit" value="Create" class="button">
+        </div>
+      </form>
+    </section>
+  </ion-content>
+</ion-view>

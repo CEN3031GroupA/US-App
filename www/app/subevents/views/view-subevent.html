@@ -1,0 +1,15 @@
+<ion-view>
+  <ion-content class="has-subheader padding">
+    <section ng-controller="SubEventsController" ng-init="findOne()">
+      <div class="subevent-header">
+        <h3 ng-bind="subevent.title"></h3>
+
+        <p ng-bind="subevent.datetime | date: 'MM/dd/yyyy @ h:mm a'"></p>
+        <p ng-bind="subevent.location"></p>
+      </div>
+
+
+      <div ta-bind ng-model="subevent.description"></div>
+    </section>
+  </ion-content>
+</ion-view>

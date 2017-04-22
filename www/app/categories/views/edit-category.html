@@ -1,19 +1,19 @@
 <ion-view>
-  <ion-content class="has-subheader item-text-wrap padding" ng-controller="CategoryCtrl" ng-init="find();">
+  <ion-content class="has-subheader item-text-wrap padding" ng-controller="CategoryCtrl" ng-init="findOne();">
     <h3 style="text-align: center">Edit Category</h3>
     <hr>
     <form ng-submit="update()">
       Title
       <label class="item item-input">
-        <input name="title" type="text" ng-model="title" id="title">
+        <input name="title" type="text" ng-model="eventCategory.title" id="title">
       </label>
       <br>
       Description
       <label class="item item-input">
-        <textarea name="description" type="text" ng-model="description" id="description" rows="5"></textarea>
+        <textarea name="description" type="text" ng-model="eventCategory.description" id="description" rows="5"></textarea>
       </label>
       <br>
-      <div ng-repeat="question in questions" for="question-{{question.num}}">
+      <div ng-repeat="question in eventCategory.questions" for="question-{{question.num}}">
         Required Question {{question.num}}
         <label class="item item-input" >
           <input name="description" type="text" ng-model="question.content" id="question-{{question.num}}">

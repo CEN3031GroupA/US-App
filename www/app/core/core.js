@@ -188,7 +188,7 @@ angular.module('starter.core', ['ionic', 'user.controllers'])
       }
     })
     .state('app.edit-category', {
-      url: '/admin/edit-category',
+      url: '/admin/categories/:eventCategoryId/edit',
       views: {
         'menuContent': {
           templateUrl: 'app/categories/views/edit-category.html',
@@ -222,7 +222,7 @@ angular.module('starter.core', ['ionic', 'user.controllers'])
       }
     })
     .state('app.edit-event', {
-      url: '/admin/events/edit',
+      url: '/admin/events/:eventId/edit',
       views: {
         'menuContent': {
           templateUrl: 'app/events/views/edit-event.html',
@@ -230,7 +230,7 @@ angular.module('starter.core', ['ionic', 'user.controllers'])
       }
     })
     .state('app.manage-event', {
-      url: '/admin/events/manage',
+      url: '/admin/events/:eventId',
       views: {
         'menuContent': {
           templateUrl: 'app/events/views/manage-events.html',

@@ -1,6 +1,6 @@
 <ion-view>
   <ion-content class="has-subheader padding" ng-controller="SubEventsController" ng-init="find()">
-    <h3 style="text-align: center"><span ng-bind="event.title"></span>Schedule</h3>
+    <h3 style="text-align: center"><span ng-bind="event.title"> </span> Schedule</h3>
     <div style="text-align: center">
       <h4 ng-if="activeEvent.inProgress"><span ng-bind="activeEvent.timer"></span> hrs remaining</h4>
       <h4 ng-if="!activeEvent.inProgress"><span ng-bind="activeEvent.timer"></span> till event</h4>

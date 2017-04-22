@@ -1,0 +1,20 @@
+<ion-view>
+  <ion-content class="has-subheader padding">
+    <section ng-controller="SubEventsController" ng-init="find()">
+      <h3 style="text-align: center">{{event.title}}</h3>
+      <div>
+        <a ui-sref="app.create-subevent" class="button button-block">Create New Subevent</a>
+      </div>
+      <hr>
+
+      <div class="event" ng-repeat="subevent in subevents | orderBy: 'start'">
+        <h5>{{subevent.title}}</h5>
+        <div>{{subevent.description}}</div>
+        <div>Location: {{subevent.location}}</div>
+        <div>Date/time: {{subevent.datetime | date: 'MM/dd/yyyy @ h:mm a Z'}}</div>
+
+        <a class="button" ui-sref="app.edit-subevent({subeventId: subevent._id})">Edit</a>
+      </div>
+    </section>
+  </ion-content>
+</ion-view>

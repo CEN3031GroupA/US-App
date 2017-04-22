@@ -1,0 +1,17 @@
+<ion-view>
+  <ion-content class="has-subheader padding" ng-controller="ArticleCtrl" ng-init="find()">
+    <h3 style="text-align: center"> Articles
+      <div>
+        <a ui-sref="app.create-article()" class="button button-block">Create New Article</a>
+      </div>
+    <hr>
+
+    <ion-list>
+      <ion-item class="item-icon-right" ng-repeat="article in articles | orderBy: 'start'" ui-sref="app.view-article({articleId: article._id})">
+        <h2>{{article.title}}</h2>
+        <p>{{article.content}}</p>
+      </ion-item>
+    </ion-list>
+
+  </ion-content>
+</ion-view>

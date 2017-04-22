@@ -1,0 +1,18 @@
+<ion-view>
+  <ion-content class="has-subheader padding">
+    <section ng-controller="EventsController" ng-init="findOne()">
+
+      <h5>{{event.title}}</h5>
+      <div>{{event.description}}</div>
+      <div>Locations: {{event.locations}}</div>
+      <div>Categories:
+        <span ng-repeat="category in event.categories">{{category.title}}</span>
+      </div>
+      <div>Start: {{event.start | date: 'MM/dd/yyyy @ h:mm a Z'}}</div>
+      <div>End: {{event.end | date: 'MM/dd/yyyy @ h:mm a Z'}}</div>
+
+      <a class="button" ui-sref="app.edit-event({eventId: event._id})">Edit</a>
+      <a class="button" ui-sref="app.list-subevents({eventId: event._id})">Manage SubEvents</a>
+    </section>
+  </ion-content>
+</ion-view>
