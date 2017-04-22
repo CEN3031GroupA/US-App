@@ -8,12 +8,15 @@ angular.module('user.controllers', [])
   // listen for the $ionicView.enter event:
   //$scope.$on('$ionicView.enter', function(e) {
   //});
-  $scope.user = JSON.parse($window.localStorage.getItem("currentUser"));
 
   // If user is signed in then redirect back home
   if ($scope.user) {
     $location.path('app/home');
   }
+
+  $scope.init = function () {
+    $scope.user = JSON.parse($window.localStorage.getItem("currentUser"));
+  };
 
   $scope.signin = function () {
     var credentials = {
@@ -28,7 +31,7 @@ angular.module('user.controllers', [])
       // If successful we assign the response to the global user model
       $window.localStorage.setItem("currentUser", angular.toJson(response));
 
-      // And redirect to the previous or home page
+        // And redirect to the previous or home page
       $state.go('app.home');
     }).error(function (response) {
       $scope.error = response.message;

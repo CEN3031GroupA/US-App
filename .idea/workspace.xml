@@ -2,23 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2fee8f05-17e4-4433-9f02-323c978199f5" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/app/core/menu.client.controller.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/app/projects/views/popover.html" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/app/articles/views/list-articles.html" afterPath="$PROJECT_DIR$/www/app/articles/views/list-articles.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/app/categories/views/edit-category.html" afterPath="$PROJECT_DIR$/www/app/categories/views/edit-category.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/app/core/core.js" afterPath="$PROJECT_DIR$/www/app/core/core.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/app/core/home.html" afterPath="$PROJECT_DIR$/www/app/core/home.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/app/events/views/create-event.html" afterPath="$PROJECT_DIR$/www/app/events/views/create-event.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/app/events/views/edit-event.html" afterPath="$PROJECT_DIR$/www/app/events/views/edit-event.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/app/events/views/manage-events.html" afterPath="$PROJECT_DIR$/www/app/events/views/manage-events.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/app/subevents/views/create-subevent.html" afterPath="$PROJECT_DIR$/www/app/subevents/views/create-subevent.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/app/subevents/views/edit-subevent.html" afterPath="$PROJECT_DIR$/www/app/subevents/views/edit-subevent.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/app/subevents/views/list-subevents.html" afterPath="$PROJECT_DIR$/www/app/subevents/views/list-subevents.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/app/subevents/views/schedule.html" afterPath="$PROJECT_DIR$/www/app/subevents/views/schedule.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/app/subevents/views/view-subevent.html" afterPath="$PROJECT_DIR$/www/app/subevents/views/view-subevent.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/app/users/views/admin/admin-home.html" afterPath="$PROJECT_DIR$/www/app/users/views/admin/admin-home.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/app/core/menu.html" afterPath="$PROJECT_DIR$/www/app/core/menu.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/app/users/controller/login.client.controller.js" afterPath="$PROJECT_DIR$/www/app/users/controller/login.client.controller.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -36,11 +22,41 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
-      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+            <state relative-caret-position="500">
+              <caret line="35" column="84" lean-forward="false" selection-start-line="35" selection-start-column="84" selection-end-line="35" selection-end-column="84" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="menu.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/www/app/core/menu.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-119">
+              <caret line="19" column="42" lean-forward="true" selection-start-line="19" selection-start-column="42" selection-end-line="19" selection-end-column="42" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="core.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/www/app/core/core.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="5875">
+              <caret line="235" column="29" lean-forward="false" selection-start-line="235" selection-start-column="29" selection-end-line="235" selection-end-column="29" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="login.client.controller.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/www/app/users/controller/login.client.controller.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="18" column="4" lean-forward="false" selection-start-line="18" selection-start-column="4" selection-end-line="18" selection-end-column="4" />
               <folding />
             </state>
           </provider>
@@ -102,7 +118,6 @@
         <option value="$PROJECT_DIR$/www/app/config/config.js" />
         <option value="$PROJECT_DIR$/www/app/events/controller/events.controller.js" />
         <option value="$PROJECT_DIR$/www/app/articles/controller/article.controller.js" />
-        <option value="$PROJECT_DIR$/www/app/users/controller/login.client.controller.js" />
         <option value="$PROJECT_DIR$/www/app/projects/views/list-projects.html" />
         <option value="$PROJECT_DIR$/www/app/projects/views/create-project.html" />
         <option value="$PROJECT_DIR$/www/app/projects/views/create-project-category.html" />
@@ -118,7 +133,6 @@
         <option value="$PROJECT_DIR$/www/app/faqs/controller/faq.controller.js" />
         <option value="$PROJECT_DIR$/www/app/app.js" />
         <option value="$PROJECT_DIR$/www/index.html" />
-        <option value="$PROJECT_DIR$/www/app/core/menu.html" />
         <option value="$PROJECT_DIR$/www/app/projects/views/edit-project.html" />
         <option value="$PROJECT_DIR$/www/app/ideas/views/edit-idea.html" />
         <option value="$PROJECT_DIR$/www/app/ideas/views/create-idea.html" />
@@ -145,6 +159,8 @@
         <option value="$PROJECT_DIR$/www/app/events/views/edit-event.html" />
         <option value="$PROJECT_DIR$/www/app/subevents/views/create-subevent.html" />
         <option value="$PROJECT_DIR$/www/app/subevents/views/edit-subevent.html" />
+        <option value="$PROJECT_DIR$/www/app/users/controller/login.client.controller.js" />
+        <option value="$PROJECT_DIR$/www/app/core/menu.html" />
         <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
@@ -166,9 +182,10 @@
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="806" />
-    <option name="width" value="1114" />
-    <option name="height" value="1024" />
+    <option name="x" value="-11" />
+    <option name="y" value="-11" />
+    <option name="width" value="1942" />
+    <option name="height" value="1046" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -441,15 +458,15 @@
       <workItem from="1492742750019" duration="5812000" />
       <workItem from="1492791026101" duration="19083000" />
       <workItem from="1492821545846" duration="1323000" />
-      <workItem from="1492840310203" duration="4028000" />
+      <workItem from="1492840310203" duration="4861000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="147975000" />
+    <option name="totallyTimeSpent" value="148808000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="806" y="0" width="1114" height="1024" extended-state="0" />
+    <frame x="-11" y="-11" width="1942" height="1046" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
@@ -508,13 +525,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-300">
           <caret line="12" column="13" lean-forward="true" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/app/users/controller/login.client.controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="298">
-          <caret line="44" column="7" lean-forward="true" selection-start-line="44" selection-start-column="7" selection-end-line="44" selection-end-column="7" />
         </state>
       </provider>
     </entry>
@@ -655,13 +665,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="400">
           <caret line="16" column="15" lean-forward="true" selection-start-line="10" selection-start-column="4" selection-end-line="16" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/app/core/menu.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="6" column="24" lean-forward="true" selection-start-line="6" selection-start-column="24" selection-end-line="6" selection-end-column="24" />
         </state>
       </provider>
     </entry>
@@ -829,14 +832,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/app/core/core.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="65">
-          <caret line="228" column="9" lean-forward="true" selection-start-line="228" selection-start-column="9" selection-end-line="228" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/www/app/subevents/controller/subevents.controller.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -885,10 +880,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/www/app/core/core.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5875">
+          <caret line="235" column="29" lean-forward="false" selection-start-line="235" selection-start-column="29" selection-end-line="235" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/app/core/menu.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-119">
+          <caret line="19" column="42" lean-forward="true" selection-start-line="19" selection-start-column="42" selection-end-line="19" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+        <state relative-caret-position="500">
+          <caret line="35" column="84" lean-forward="false" selection-start-line="35" selection-start-column="84" selection-end-line="35" selection-end-column="84" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/app/users/controller/login.client.controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="18" column="4" lean-forward="false" selection-start-line="18" selection-start-column="4" selection-end-line="18" selection-end-column="4" />
           <folding />
         </state>
       </provider>

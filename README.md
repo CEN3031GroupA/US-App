@@ -10,7 +10,7 @@
 - Projects
 - Ideas
 - FAQs
-- Admin Home (for admin users only - not visible on Ionic View)
+- Admin Home (for admin users only)
   - Events
   - Subevents
   - Articles
@@ -32,7 +32,8 @@
   - popover in nav-bar for edit and delete options
 
 # Bugs
-- Data objects need to be updated/refreshed between views to keep latest changes. Data is not persistent between web application and mobile.
+- Data objects need to be updated/refreshed between views to keep latest changes. Data is not persistent between web application and mobile
+- Admin menu option not showing on Ionic View unless logging out and logging back in
 - User not showing on comments and faqs
 - Edit Category - Required questions not showing
 
