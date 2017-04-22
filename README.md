@@ -18,18 +18,15 @@
 - QR Barcode Scanner
 
 # Not completed:
+- RichText
+
 - Events
-  - create-event.html
-  - edit-event.html
-  - manage-events.html
+  - datetimepicker
+  - textAngular
 
 - Subevents
-  - create-subevent.html
-  - edit-subevent.html
-  - list-subevents.html
-
-- Articles
-  - list-articles.html
+  - datetimepicker
+  - textAngular
 
 - Projects
   - popover in nav-bar for edit and delete options
@@ -37,6 +34,7 @@
 # Bugs
 - Data objects need to be updated/refreshed between views to keep latest changes. Data is not persistent between web application and mobile.
 - User not showing on comments and faqs
+- Edit Category - Required questions not showing
 
 # Notable Folders
 - core: home, menu
