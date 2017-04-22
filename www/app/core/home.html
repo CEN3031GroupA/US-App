@@ -22,6 +22,8 @@
           <p>Don't be shy!</p>
         </div>
       </div>
+    </section>
+    <section ng-controller="ProjectsController">
       <div class="padding-horizontal padding-top">
         <div class="item home-card" ng-click="scanBarcode()">
           <h2>QR Scanner</h2>
@@ -31,7 +33,7 @@
     </section>
     <section ng-controller="ArticleCtrl" ng-init="find();">
       <ion-list class="padding">
-        <ion-item ng-repeat="article in articles" href="#/app/articles/{{article._id}}">
+        <ion-itemng-repeat="article in articles" href="#/app/articles/{{article._id}}">
           <h3>{{article.title}}</h3>
           <p>{{article.content}}</p>
         </ion-item>
